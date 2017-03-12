@@ -26,16 +26,10 @@ public:
 // type checking using SFINAE
 
 template < typename T >
-struct is_vector
-{
-  static constexpr const bool value = false;
-};
+struct is_vector : std::false_type {};
 
 template < typename Scalar, size_t n >
-struct is_vector < Vector < Scalar, n > >
-{
-  static constexpr const bool value = true;
-};
+struct is_vector < Vector < Scalar, n > > : std::true_type {};
 
 typedef Vector<double, 2> Vector2d;
 typedef Vector<double, 3> Vector3d;
@@ -54,10 +48,7 @@ get_value(Variant const& v) { return boost::get<T>(v); }
 
 template < typename T >
 typename std::enable_if<is_vector<T>::value, T>::type
-get_value(Variant const& v)
-{
-  return T(boost::get<std::vector<double>>(v));
-}
+get_value(Variant const& v) { return T(boost::get<std::vector<double>>(v)); }
 
 // Testing the implementation
 
