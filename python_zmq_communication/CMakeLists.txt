@@ -1,6 +1,7 @@
-cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 
 project(swig-test CXX)
+set(CMAKE_CXX_STANDARD 11)
 
 # Add current directory to search path
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
@@ -32,16 +33,6 @@ set_source_files_properties(interface.i PROPERTIES SWIG_FLAGS "-py3")
 
 swig_add_module(example python interface.i)
 swig_link_libraries(example backend ${PYTHON_LIBRARIES})
-
-# Use C++11
-
-include(CheckCXXCompilerFlag)
-CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
-if(COMPILER_SUPPORTS_CXX11)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-else()
-    message(FATAL "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
-endif()
 
 # Copy the test script to the binary dir
 
