@@ -4,10 +4,13 @@ import example as ex
 
 context = zmq.Context()
 socket = context.socket(zmq.SUB)
-socket.bind("tcp://*:5556")
+socket.bind("tcp://*:*")
 socket.setsockopt_string(zmq.SUBSCRIBE, u"")
+endpoint = socket.getsockopt_string(zmq.LAST_ENDPOINT)
 
-t = multiprocessing.Process(target=ex.perform, args=[1])
+print("Binding via {}".format(endpoint))
+
+t = multiprocessing.Process(target=ex.perform, args=(1,endpoint))
 t.start()
 
 string = ""

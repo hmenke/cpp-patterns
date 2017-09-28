@@ -2,10 +2,10 @@
 
 #include <memory>
 #include <functional>
-#include <cstdlib>
-#include <cstdarg>
+#include <string>
 #include <zmq.h>
 
+#include <boost/format.hpp>
 
 template < typename T >
 struct cptr
@@ -70,7 +70,7 @@ public:
  * used like a regular %socket pointer with the C API.  For example
  * the `zmq_sendmsg` is not implemented but can be used nevertheless.
  * \code
- * if ( zmq_sendmsg(socket, msg, flags) != 0 )
+ * if ( zmq_sendmsg(socket, msg, flags) == -1 )
  *   throw zmq::error();
  * \endcode
  * When using the C API directly, errors have to be checked explicitly!
@@ -79,7 +79,7 @@ public:
  */
 class socket
 {
-  std::unique_ptr<void, std::function<void(void*)>> m_socket;
+  std::unique_ptr < void, std::function < void(void*) > > m_socket;
 public:
   /** \brief Constructor
    *
@@ -89,7 +89,7 @@ public:
    * \param[in] new_socket    pre-allocated ZeroMQ socket
    * \throws zmq::error
    */
-  explicit socket(void * new_socket) throw(zmq::error)
+  explicit socket(void * new_socket)
     : m_socket( new_socket, zmq_close )
   {
     if ( !new_socket )
@@ -112,9 +112,9 @@ public:
    * \param[in] endpoint   string with transport protocal and address
    * \throws zmq::error
    */
-  void bind(char const *endpoint) const throw(zmq::error)
+  void bind(char const *endpoint) const
   {
-    if ( zmq_bind(*this, endpoint) != 0 )
+    if ( zmq_bind(*this, endpoint) == -1 )
       throw error();
   }
 
@@ -126,31 +126,36 @@ public:
    * \param[in] endpoint   string with transport protocal and address
    * \throws zmq::error
    */
-  void connect(char const *endpoint) const throw(zmq::error)
+  void connect(char const *endpoint) const
   {
-    if ( zmq_connect(*this, endpoint) != 0 )
+    if ( zmq_connect(*this, endpoint) == -1 )
       throw error();
   }
-  
+
   /** \brief Send a message part on a socket
    *
    * The send() function shall queue a message created from its
    * printf-style arguments.
    *
-   * \param[in] fmt   printf-style string for argument formatting
-   * \param[in] ...   variadic arguments
+   * \param[in] fmt    printf-style string for argument formatting
+   * \param[in] args   variadic arguments
+   * \returns number of bytes written (without zero terminator)
    */
-  void send(char const *fmt, ...) const __attribute__((format (printf, 2, 3)));
-  void send(char const *fmt, ...)
+  template < typename... Args >
+  int send(char const *fmt, Args&&... args)
   {
-    va_list args;
-    va_start(args, fmt);
-    cptr<char> tmp;
-    int len = vasprintf(&tmp.ptr, fmt, args);
-    if ( len == -1 )
-      throw std::bad_alloc();
-    if ( zmq_send(*this, tmp, len+1, 0) == -1 )
+    boost::format formatter(fmt);
+
+    // This is horrible.  In C++17 we have the binary fold expression
+    using expander = int[];
+    (void) expander { 0, (void(formatter % std::forward<Args>(args)), 0)... };
+
+    std::string tmp = formatter.str();
+    int len = tmp.size();
+
+    if ( zmq_send(*this, tmp.c_str(), len+1, 0) == -1 )
       throw error();
+    return len;
   }
 };
 
@@ -162,9 +167,9 @@ public:
  * implemented.  The context object implicitly behaves like a pointer
  * to void which is what ZeroMQ expects.  Thus a context object can be
  * used like a regular %context pointer with the C API.  For example
- * the `zmq_sendmsg` is not implemented but can be used nevertheless.
+ * the `zmq_ctx_set` is not implemented but can be used nevertheless.
  * \code
- * if ( zmq_ctx_set(context, ZMQ_IPV6, 1) != 0 )
+ * if ( zmq_ctx_set(context, ZMQ_IPV6, 1) == -1 )
  *   throw zmq::error();
  * \endcode
  * When using the C API directly, errors have to be checked explicitly!
@@ -173,7 +178,7 @@ public:
  */
 class context
 {
-  std::unique_ptr<void, std::function<int(void*)>> m_context;
+  std::unique_ptr < void, std::function < int(void*) > > m_context;
 public:
   /** \brief Constructor */
   context() noexcept : m_context( zmq_ctx_new(), zmq_ctx_term ) {}
@@ -195,6 +200,7 @@ public:
    */
   zmq::socket socket(int type) const
   {
+    /** errors of `zmq_socket` are handled in the zmq::socket constructor */
     return zmq::socket( zmq_socket(*this, type) );
   }
 };

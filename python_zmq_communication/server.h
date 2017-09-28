@@ -1,3 +1,3 @@
 #pragma once
 
-void perform(int);
+void perform(int, std::string const&);

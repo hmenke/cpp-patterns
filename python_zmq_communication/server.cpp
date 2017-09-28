@@ -1,18 +1,20 @@
 #include "communication.h"
 #include "server.h"
-#include <iostream>
-#include <unistd.h>
 
-void perform(int nseconds)
+#include <chrono>
+#include <iostream>
+#include <thread>
+
+void perform(int nseconds, std::string const& endpoint)
 {
   //  Prepare our context and socket
   zmq::context context;
   zmq::socket publisher = context.socket(ZMQ_PUB);
-  publisher.connect("tcp://localhost:5556");
+  publisher.connect(endpoint.c_str());
 
   for (int i = 0; i < 5; ++i)
   {
-    sleep(nseconds);
+    std::this_thread::sleep_for(std::chrono::seconds{nseconds});
 
     publisher.send("%1d", i);
   }

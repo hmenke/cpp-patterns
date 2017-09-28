@@ -14,10 +14,14 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic")
 
 add_library(backend SHARED ${SOURCE_FILES})
 
-# Find ZMQ
+# Find ZMQ and Boost
 
 find_library(ZMQ_LIBRARY zmq)
 list(APPEND LIBRARIES ${ZMQ_LIBRARY})
+
+find_package(Boost REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
+list(APPEND LIBRARIES ${Boost_LIBRARIES})
 
 target_link_libraries(backend ${LIBRARIES})
 
