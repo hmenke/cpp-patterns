@@ -1,7 +1,7 @@
 import pickle
-import example as ex
+import swig_pickle as sp
 
-t = ex.Test()
+t = sp.Test()
 t.construct()
 
 print(t.get())

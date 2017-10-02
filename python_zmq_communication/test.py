@@ -1,6 +1,6 @@
 import zmq
 import multiprocessing
-import example as ex
+import python_zmq_communication as pzc
 
 context = zmq.Context()
 socket = context.socket(zmq.SUB)
@@ -10,7 +10,7 @@ endpoint = socket.getsockopt_string(zmq.LAST_ENDPOINT)
 
 print("Binding via {}".format(endpoint))
 
-t = multiprocessing.Process(target=ex.perform, args=(1,endpoint))
+t = multiprocessing.Process(target=pzc.perform, args=(1,endpoint))
 t.start()
 
 string = ""

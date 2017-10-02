@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 
-project(swig-test CXX)
+project(swig-pickle CXX)
 set(CMAKE_CXX_STANDARD 11)
 
 # Add current directory to search path
@@ -24,14 +24,14 @@ include_directories(${PYTHON_INCLUDE_PATH})
 set_source_files_properties(interface.i PROPERTIES CPLUSPLUS ON)
 set_source_files_properties(interface.i PROPERTIES SWIG_FLAGS "-py3")
 
-swig_add_module(example python interface.i)
-swig_link_libraries(example ${PYTHON_LIBRARIES} ${LIBRARIES})
+swig_add_module(swig_pickle python interface.i)
+swig_link_libraries(swig_pickle ${PYTHON_LIBRARIES} ${LIBRARIES})
 
 # Copy the test script to the binary dir
 
-add_custom_target(test_script ALL
-  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/test.py
-                                   ${CMAKE_BINARY_DIR}/test.py)
+add_custom_target(pickle_script ALL
+  COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_SOURCE_DIR}/test.py
+                                   ${CMAKE_CURRENT_BINARY_DIR}/test.py)
 
 # Print found packages
 
