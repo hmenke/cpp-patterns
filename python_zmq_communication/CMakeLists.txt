@@ -16,7 +16,7 @@ add_library(zmq_cpp_backend SHARED ${SOURCE_FILES})
 
 # Find ZMQ and Boost
 
-find_library(ZMQ_LIBRARY zmq)
+find_library(ZMQ_LIBRARY zmq libzmq)
 list(APPEND LIBRARIES ${ZMQ_LIBRARY})
 
 find_package(Boost REQUIRED)

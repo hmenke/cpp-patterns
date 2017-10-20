@@ -10,7 +10,7 @@ add_subdirectory(detection-idiom)
 add_subdirectory(integer_sequence)
 #add_subdirectory(python_callback) # has no CMakeLists.txt
 add_subdirectory(python_zmq_communication)
-add_subdirectory(swig_pickle)
+#add_subdirectory(swig_pickle)
 
 # Print found packages
 

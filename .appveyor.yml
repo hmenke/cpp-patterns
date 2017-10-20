@@ -7,7 +7,7 @@ configuration: Release
 environment:
     MINICONDA_ROOT: C:\Miniconda36-x64
     APPVEYOR_SAVE_CACHE_ON_ERROR: true
- 
+
 install:
   - call "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64
   - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_amd64
@@ -18,15 +18,10 @@ install:
   - cmd: cd C:\ && git clone https://github.com/Microsoft/vcpkg.git && cd vcpkg && bootstrap-vcpkg.bat && cd %APPVEYOR_BUILD_FOLDER%
   - cmd: C:\vcpkg\vcpkg integrate install
   - cmd: C:\vcpkg\vcpkg install boost:x64-windows zeromq:x64-windows
- 
-cache:
-  - C:\ProgramData\chocolatey\bin -> .appveyor.yml
-  - C:\ProgramData\chocolatey\lib -> .appveyor.yml
-  - C:\vcpkg -> .appveyor.yml
 
 before_build:
   - cmd: md build && cd build
-  - cmd: cmake -G "Visual Studio 14 2015 Win64" .. -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake"
+  - cmd: cmake -G "Visual Studio 14 2015 Win64" .. -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake
 
 build:
   project: build\cpp-patterns.sln
