@@ -3,14 +3,66 @@
 #include <tuple>
 #include <vector>
 
-template < typename T, T... I >
-struct index_sequence {};
+template < typename T, T... Is >
+struct integer_sequence {};
 
-template < typename T, T N, T... I>
-struct make_index_sequence : public make_index_sequence<T, N - 1, N - 1, I...> {};
+// Populate integer_sequence recursively
 
-template < typename T, T... I>
-struct make_index_sequence<T, 0, I...> : public index_sequence<T, I...> {};
+template < typename T, typename N, typename... Is >
+struct make_integer_sequence_impl
+{
+  using type = typename make_integer_sequence_impl<
+    T,
+    std::integral_constant<T,N::value-1>,
+    std::integral_constant<T,N::value>,
+    std::integral_constant<T,Is::value>...
+    >::type;
+};
+
+template < typename T, typename... Is >
+struct make_integer_sequence_impl<T,std::integral_constant<T,0>,Is...>
+{
+  using type = integer_sequence<T,0,Is::value...>;
+};
+
+// Interface
+
+template < typename T, typename N >
+struct make_integer_sequence_t
+{
+  using type = typename make_integer_sequence_impl<
+    T,
+    std::integral_constant<T,N::value-2>,
+    std::integral_constant<T,N::value-1>
+    >::type;
+};
+
+template < typename T >
+struct make_integer_sequence_t<T,std::integral_constant<T,0>>
+{
+  using type = integer_sequence<T>;
+};
+
+template < typename T >
+struct make_integer_sequence_t<T,std::integral_constant<T,1>>
+{
+  using type = integer_sequence<T,0>;
+};
+
+// Handy typedef
+
+template < typename T, T N >
+using make_integer_sequence =
+  typename make_integer_sequence_t<T,std::integral_constant<T,N>>::type;
+
+// From that derive index_sequence
+
+template < size_t... Is >
+using index_sequence = integer_sequence<size_t,Is...>;
+
+template < size_t N >
+using make_index_sequence = make_integer_sequence<size_t,N>;
+
 
 // Call a function for each element in a tuple
 

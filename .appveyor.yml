@@ -1,40 +1,35 @@
-os: Visual Studio 2015
-
 platform: x64
 
-configuration: Release
-
 environment:
-    MINICONDA_ROOT: C:\Miniconda36-x64
-    APPVEYOR_SAVE_CACHE_ON_ERROR: true
+  MINICONDA_ROOT: C:\Miniconda36-x64
+  GENERATOR: Visual Studio 14 2015 Win64
+  CONFIG: Release
+  BOOST_ROOT: C:\Libraries\boost_1_59_0
+  BOOST_LIBRARYDIR: C:\Libraries\boost_1_59_0\lib64-msvc-14.0
+  PATH: "%BOOST_LIBRARYDIR%;%PATH%"
 
 install:
-  - call "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64
-  - call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_amd64
-
-  - ps: choco install -y -r swig --version 3.0.9
+  # Install SWIG
+  - ps: choco install -y --no-progress -r swig --version 3.0.9
   - cmd: call %MINICONDA_ROOT%\Scripts\activate.bat
+  # Install ZMQ
+  - cmd: C:\tools\vcpkg\vcpkg integrate install
+  - cmd: C:\tools\vcpkg\vcpkg install zeromq:x64-windows
 
-  - cmd: cd C:\ && git clone https://github.com/Microsoft/vcpkg.git && cd vcpkg && bootstrap-vcpkg.bat && cd %APPVEYOR_BUILD_FOLDER%
-  - cmd: C:\vcpkg\vcpkg integrate install
-  - cmd: C:\vcpkg\vcpkg install boost:x64-windows zeromq:x64-windows
-
-before_build:
-  - cmd: md build && cd build
-  - cmd: cmake -G "Visual Studio 14 2015 Win64" .. -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE -DCMAKE_TOOLCHAIN_FILE=C:\vcpkg\scripts\buildsystems\vcpkg.cmake
-
-build:
-  project: build\cpp-patterns.sln
-  parallel: true
-  verbosity: minimal
+build_script:
+  - md build
+  - cd build
+  - cmake -G "%GENERATOR%" -DCMAKE_BUILD_TYPE="%CONFIG%" -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE -DCMAKE_TOOLCHAIN_FILE=C:\tools\vcpkg\scripts\buildsystems\vcpkg.cmake ..
+  - cmake --build . --config "%CONFIG%"
 
 after_build:
-  - cmd: copy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\redist\1033\vcredist_x64.exe" cpp-patterns-install\
-  - cmd: xcopy /E . cpp-patterns-install\
-  - cmd: copy C:\vcpkg\installed\x64-windows\bin\libzmq.dll cpp-patterns-install\
-  - cmd: copy C:\vcpkg\installed\x64-windows\bin\boost_serialization-vc140-mt-1_64.dll cpp-patterns-install\
-  - cmd: 7z a -tzip cpp-patterns-windows-x86_64.zip cpp-patterns-install > nul
+  - cmd: md ..\cpp-patterns-install
+  - cmd: copy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\redist\1033\vcredist_x64.exe" ..\cpp-patterns-install\
+  # TODO: This just dumps the whole build dir.  We should do a more fine grained selection of files.
+  - cmd: xcopy /E . ..\cpp-patterns-install\
+  - cmd: copy C:\Tools\vcpkg\packages\zeromq_x64-windows\bin\libzmq.dll ..\cpp-patterns-install\
+  - cmd: 7z a -tzip cpp-patterns-windows-x86_64.zip ..\cpp-patterns-install > nul
 
 artifacts:
-  - path: build\cpp-patterns-install-windows-x86_64.zip
+  - path: build\cpp-patterns-windows-x86_64.zip
     name: installer

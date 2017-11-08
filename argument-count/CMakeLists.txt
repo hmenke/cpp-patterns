@@ -10,7 +10,7 @@ file(GLOB SOURCE_FILES *.cpp)
 add_executable(argcnt ${SOURCE_FILES})
 
 set_source_files_properties(${SOURCE_FILES}
-  PROPERTIES COMPILE_FLAGS "-Wall -Wextra -Wpedantic -Weffc++")
+  PROPERTIES COMPILE_FLAGS "${COMPILER_WARNINGS}")
 
 # Print found packages
 

@@ -10,13 +10,16 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 file(GLOB SOURCE_FILES *.cpp)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic")
+set_source_files_properties(${SOURCE_FILES}
+  PROPERTIES COMPILE_FLAGS "${COMPILER_WARNINGS}")
 
 add_library(zmq_cpp_backend SHARED ${SOURCE_FILES})
 
 # Find ZMQ and Boost
 
-find_library(ZMQ_LIBRARY zmq libzmq)
+find_path(ZMQ_INCLUDE_DIR NAMES zmq.h)
+find_library(ZMQ_LIBRARY NAMES zmq libzmq)
+include_directories(${ZMQ_INCLUDE_DIR})
 list(APPEND LIBRARIES ${ZMQ_LIBRARY})
 
 find_package(Boost REQUIRED)

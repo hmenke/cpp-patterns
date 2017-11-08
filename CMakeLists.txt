@@ -2,6 +2,12 @@ cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 
 project(cpp-patterns CXX)
 
+if(MSVC)
+  set(COMPILER_WARNINGS "/W3 /DNOMINMAX")
+else()
+  set(COMPILER_WARNINGS "-Wall -Wextra -Wpedantic -Weffc++")
+endif()
+
 # Add patterns
 
 add_subdirectory(argument-count)
