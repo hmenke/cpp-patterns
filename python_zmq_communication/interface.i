@@ -1,6 +1,4 @@
-%module example
-
-%feature("autodoc", "3");
+%module python_zmq_communication
 
 %include "exception.i"
 

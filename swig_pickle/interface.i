@@ -1,4 +1,4 @@
-%module example
+%module swig_pickle
 
 %{
 #include <boost/archive/binary_oarchive.hpp>
@@ -15,15 +15,18 @@
 // https://stackoverflow.com/a/19798903
 %define %boost_picklable(cls...)
   %extend cls {
-    std::string __getstate__() {
+    PyObject * __getstate__() {
       std::stringstream ss;
       boost::archive::binary_oarchive ar(ss);
       ar << *($self);
-      return ss.str();
+      return PyBytes_FromStringAndSize(ss.str().data(), ss.str().length());
     }
 
-    void __setstate_internal(std::string const &sState) {
-      boost::iostreams::array_source asource(sState.c_str(), sState.size());
+    void __setstate_internal(PyObject * const sState) {
+      char *buffer;
+      Py_ssize_t len;
+      PyBytes_AsStringAndSize(sState, &buffer, &len);
+      boost::iostreams::array_source asource(buffer, static_cast<size_t>(len));
       boost::iostreams::stream<boost::iostreams::array_source> ss(asource);
       boost::archive::binary_iarchive ar(ss);
       ar >> *($self);
