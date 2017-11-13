@@ -17,13 +17,17 @@ void perform(int nseconds, std::string const& endpoint)
   publisher.connect(endpoint.c_str());
 
   std::cout << "Enter the waiting loop" << std::endl;
+  #pragma omp parallel for
   for (int i = 0; i < 5; ++i)
   {
     std::cout << "Waiting for " << nseconds << " s" << std::endl;
     std::this_thread::sleep_for(std::chrono::seconds{nseconds});
 
-    std::cout << "Sending loop index" << std::endl;
-    publisher.send("%1d", i);
+    #pragma omp critical
+    {
+        std::cout << "Sending loop index " << i << std::endl;
+        publisher.send("%1d", i);
+    }
   }
 
   std::cout << "Sending end signal" << std::endl;
