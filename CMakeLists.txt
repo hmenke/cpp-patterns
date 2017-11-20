@@ -12,6 +12,7 @@ endif()
 
 add_subdirectory(argument-count)
 add_subdirectory(detection-idiom)
+#add_subdirectory(eigen_cuda)
 #add_subdirectory(enable_if) # has no CMakeLists.txt
 add_subdirectory(integer_sequence)
 #add_subdirectory(python_callback) # has no CMakeLists.txt
