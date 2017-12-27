@@ -24,10 +24,18 @@ endif()
 
 # Find ZMQ and Boost
 
-find_path(ZMQ_INCLUDE_DIR NAMES zmq.h)
-find_library(ZMQ_LIBRARY NAMES zmq libzmq)
-include_directories(${ZMQ_INCLUDE_DIR})
-list(APPEND LIBRARIES ${ZMQ_LIBRARY})
+find_package(ZeroMQ)
+if(ZeroMQ_FOUND)
+  include_directories(${ZeroMQ_INCLUDE_DIR})
+  list(APPEND LIBRARIES "libzmq")
+  message(STATUS "ZeroMQ found: ${ZeroMQ_LIBRARY}")
+else()
+  find_path(ZMQ_INCLUDE_DIR NAMES zmq.h)
+  find_library(ZMQ_LIBRARY NAMES zmq libzmq)
+  message(STATUS "Attempting to find ZeroMQ manually: ${ZMQ_LIBRARY}")
+  include_directories(${ZMQ_INCLUDE_DIR})
+  list(APPEND LIBRARIES ${ZMQ_LIBRARY})
+endif()
 
 find_package(Boost REQUIRED)
 include_directories(${Boost_INCLUDE_DIRS})

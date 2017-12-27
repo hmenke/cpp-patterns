@@ -13,13 +13,20 @@ install:
   - ps: choco install -y --no-progress -r swig --version 3.0.9
   - cmd: call %MINICONDA_ROOT%\Scripts\activate.bat
   # Install ZMQ
-  - cmd: C:\tools\vcpkg\vcpkg integrate install
-  - cmd: C:\tools\vcpkg\vcpkg install zeromq:x64-windows
+  - cmd: cd C:\Tools\vcpkg
+  - cmd: git pull
+  - cmd: .\bootstrap-vcpkg.bat
+  - cmd: cd C:\projects\cpp-patterns
+  - cmd: C:\Tools\vcpkg\vcpkg install zeromq:x64-windows
+
+cache:
+  - C:\Tools\vcpkg\installed
+  - C:\Users\appveyor\AppData\Local\Temp\chocolatey
 
 build_script:
   - md build
   - cd build
-  - cmake -G "%GENERATOR%" -DCMAKE_BUILD_TYPE="%CONFIG%" -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE -DCMAKE_TOOLCHAIN_FILE=C:\tools\vcpkg\scripts\buildsystems\vcpkg.cmake ..
+  - cmake -G "%GENERATOR%" -DCMAKE_BUILD_TYPE="%CONFIG%" -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE -DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake ..
   - cmake --build . --config "%CONFIG%"
 
 after_build:
