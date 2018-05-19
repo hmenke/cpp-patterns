@@ -5,10 +5,16 @@
 #include <tuple>
 #include <type_traits>
 
-#if __cplusplus == 201402L
-#define CXX14_CONSTEXPR constexpr
+#ifdef __CUDACC__
+#    define DEVICE_FUNC __host__ __device__
 #else
-#define CXX14_CONSTEXPR
+#    define DEVICE_FUNC
+#endif
+
+#if __cplusplus == 201402L
+#    define CXX14_CONSTEXPR constexpr
+#else
+#    define CXX14_CONSTEXPR
 #endif
 
 namespace meta {
@@ -73,7 +79,7 @@ struct all<> {
 template <size_t n, size_t... N>
 struct linearized_index {
     template <typename... Idx>
-    constexpr std::size_t operator()(Idx... idx) const {
+    DEVICE_FUNC constexpr std::size_t operator()(Idx... idx) const {
         using unpack = std::size_t[];
         return unpack{std::size_t(idx)...}[n] +
                unpack{std::size_t(N)...}[n] *
@@ -84,7 +90,7 @@ struct linearized_index {
 template <size_t... N>
 struct linearized_index<0, N...> {
     template <typename... Idx>
-    constexpr std::size_t operator()(Idx... idx) const {
+    DEVICE_FUNC constexpr std::size_t operator()(Idx... idx) const {
         using unpack = std::size_t[];
         return unpack{std::size_t(idx)...}[0];
     }
@@ -146,18 +152,18 @@ private:
     value_type m_data[size_product<N...>::value];
 
 public:
-    constexpr multi_array() {}
+    DEVICE_FUNC constexpr multi_array() {}
 
     template <typename... U>
-    constexpr multi_array(U... data) : m_data{value_type(data)...} {}
+    DEVICE_FUNC constexpr multi_array(U... data) : m_data{value_type(data)...} {}
 
-    void fill(T &&initializer) {
+    DEVICE_FUNC void fill(T &&initializer) {
         for (iterator it = begin(); it != end(); ++it) {
             *it = initializer;
         }
     }
 
-    void swap(multi_array &other) {
+    DEVICE_FUNC void swap(multi_array &other) {
         // noexcept(std::is_nothrow_swappable<value_type>::value)
         iterator oit = other.begin();
         for (iterator it = begin(); it != end(); ++it, (void)++oit) {
@@ -167,43 +173,43 @@ public:
         }
     }
 
-    constexpr iterator begin() const noexcept { return iterator(data()); }
+    DEVICE_FUNC constexpr iterator begin() const noexcept { return iterator(data()); }
 
-    constexpr iterator end() const noexcept {
+    DEVICE_FUNC constexpr iterator end() const noexcept {
         return iterator(data() + size_product<N...>::value);
     }
 
-    pointer data() noexcept { return m_data; }
-    const_pointer data() const noexcept { return m_data; }
+    DEVICE_FUNC pointer data() noexcept { return m_data; }
+    DEVICE_FUNC const_pointer data() const noexcept { return m_data; }
 
     template <typename... Idx>
-    CXX14_CONSTEXPR reference operator()(Idx... idx) noexcept {
+    DEVICE_FUNC CXX14_CONSTEXPR reference operator()(Idx... idx) noexcept {
         static_assert(sizeof...(idx) == sizeof...(N), "dimension mismatch");
         static_assert(
             meta::all<std::is_convertible<Idx, size_type>::value...>::value,
             "type mismatch");
         return
-#ifndef NDEBUG
+#if !defined(NDEBUG) || defined(__CUDACC__)
             meta::check_bounds<sizeof...(idx) - 1, N...>{}(idx...),
 #endif
             m_data[meta::linearized_index<sizeof...(idx) - 1, N...>{}(idx...)];
     }
 
     template <typename... Idx>
-    constexpr value_type operator()(Idx... idx) const noexcept {
+    DEVICE_FUNC constexpr value_type operator()(Idx... idx) const noexcept {
         static_assert(sizeof...(idx) == sizeof...(N), "dimension mismatch");
         static_assert(
             meta::all<std::is_convertible<Idx, size_type>::value...>::value,
             "type mismatch");
         return
-#ifndef NDEBUG
+#if !defined(NDEBUG) || defined(__CUDACC__)
             meta::check_bounds<sizeof...(idx) - 1, N...>{}(idx...),
 #endif
             m_data[meta::linearized_index<sizeof...(idx) - 1, N...>{}(idx...)];
     }
 
     template <size_type... idx>
-    CXX14_CONSTEXPR reference get() noexcept {
+    DEVICE_FUNC CXX14_CONSTEXPR reference get() noexcept {
         static_assert(sizeof...(idx) == sizeof...(N), "dimension mismatch");
         static_assert(meta::all<size_less<idx, N>::value...>::value,
                       "index out of bounds");
@@ -211,7 +217,7 @@ public:
     }
 
     template <size_type... idx>
-    constexpr value_type get() const noexcept {
+    DEVICE_FUNC constexpr value_type get() const noexcept {
         static_assert(sizeof...(idx) == sizeof...(N), "dimension mismatch");
         static_assert(meta::all<size_less<idx, N>::value...>::value,
                       "index out of bounds");
@@ -219,12 +225,12 @@ public:
     }
 
     template <size_type i>
-    constexpr size_type size() const noexcept {
+    DEVICE_FUNC constexpr size_type size() const noexcept {
         static_assert(i < sizeof...(N), "index out of bounds");
         return size_element<i, N...>::value;
     }
 
-    constexpr size_type size() const noexcept {
+    DEVICE_FUNC constexpr size_type size() const noexcept {
         return size_product<N...>::value;
     }
 };
