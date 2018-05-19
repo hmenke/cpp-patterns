@@ -68,17 +68,53 @@ struct all<> {
     static constexpr bool const value = true;
 };
 
-// index_sequence
+// linearized_index
 
-// https://stackoverflow.com/a/24481400/1944004
-template <std::size_t... I>
-struct index_sequence {};
+template <size_t n, size_t... N>
+struct linearized_index {
+    template <typename... Idx>
+    constexpr std::size_t operator()(Idx... idx) const {
+        using unpack = std::size_t[];
+        return unpack{std::size_t(idx)...}[n] +
+               unpack{std::size_t(N)...}[n] *
+                   linearized_index<n - 1, N...>{}(idx...);
+    }
+};
 
-template <std::size_t N, std::size_t... I>
-struct make_index_sequence : public make_index_sequence<N - 1, N - 1, I...> {};
+template <size_t... N>
+struct linearized_index<0, N...> {
+    template <typename... Idx>
+    constexpr std::size_t operator()(Idx... idx) const {
+        using unpack = std::size_t[];
+        return unpack{std::size_t(idx)...}[0];
+    }
+};
 
-template <std::size_t... I>
-struct make_index_sequence<0, I...> : public index_sequence<I...> {};
+// check_bounds
+
+template <size_t n, size_t... N>
+struct check_bounds {
+    template <typename... Idx>
+    constexpr bool operator()(Idx... idx) const {
+        using unpack = std::size_t[];
+        return unpack{std::size_t(idx)...}[n] < unpack{std::size_t(N)...}[n]
+                   ? check_bounds<n - 1, N...>{}(idx...)
+                   : throw std::out_of_range("index out of bounds: " +
+                                             std::to_string(n));
+    }
+};
+
+template <size_t... N>
+struct check_bounds<0, N...> {
+    template <typename... Idx>
+    constexpr bool operator()(Idx... idx) const {
+        using unpack = std::size_t[];
+        return unpack{std::size_t(idx)...}[0] < unpack{std::size_t(N)...}[0]
+                   ? false
+                   : throw std::out_of_range("index out of bounds: " +
+                                             std::to_string(0));
+    }
+};
 
 } // namespace meta
 
@@ -105,37 +141,6 @@ private:
 
     template <size_type i, size_type... pack>
     using size_element = meta::pack_element<i, size_type, pack...>;
-
-    template <size_type... I, typename... Idx>
-    CXX14_CONSTEXPR size_type linearized_index(meta::index_sequence<I...>,
-                                               Idx... idx) const {
-        size_type index = 0;
-        using unpack = size_type[];
-        (void)unpack{0UL,
-                     ((void)(index = (index + unpack{size_type(idx)...}[I]) *
-                                     size_element<I + 1, N...>::value),
-                      0UL)...};
-        return index + unpack{size_type(idx)...}[sizeof...(idx) - 1];
-    }
-
-#ifndef NDEBUG
-#define check_bounds(a, b) check_bounds_impl(a, b)
-#else
-#define check_bounds(a, b)
-#endif // NDEBUG
-
-    template <size_type... I, typename... Idx>
-    CXX14_CONSTEXPR void check_bounds_impl(meta::index_sequence<I...>,
-                                           Idx... idx) const {
-        using unpack = size_type[];
-        (void)unpack{
-            0UL,
-            ((void)(unpack{size_type(idx)...}[I] < size_element<I, N...>::value
-                        ? 0
-                        : throw std::out_of_range("index out of bounds: " +
-                                                  std::to_string(I))),
-             0UL)...};
-    }
 
     // Storage
     value_type m_data[size_product<N...>::value];
@@ -177,22 +182,24 @@ public:
         static_assert(
             meta::all<std::is_convertible<Idx, size_type>::value...>::value,
             "type mismatch");
-        check_bounds(meta::make_index_sequence<sizeof...(idx)>{}, idx...);
-        size_type index = linearized_index(
-            meta::make_index_sequence<sizeof...(idx) - 1>{}, idx...);
-        return m_data[index];
+        return
+#ifndef NDEBUG
+            meta::check_bounds<sizeof...(idx) - 1, N...>{}(idx...),
+#endif
+            m_data[meta::linearized_index<sizeof...(idx) - 1, N...>{}(idx...)];
     }
 
     template <typename... Idx>
-    CXX14_CONSTEXPR value_type operator()(Idx... idx) const noexcept {
+    constexpr value_type operator()(Idx... idx) const noexcept {
         static_assert(sizeof...(idx) == sizeof...(N), "dimension mismatch");
         static_assert(
             meta::all<std::is_convertible<Idx, size_type>::value...>::value,
             "type mismatch");
-        check_bounds(meta::make_index_sequence<sizeof...(idx)>{}, idx...);
-        size_type index = linearized_index(
-            meta::make_index_sequence<sizeof...(idx) - 1>{}, idx...);
-        return m_data[index];
+        return
+#ifndef NDEBUG
+            meta::check_bounds<sizeof...(idx) - 1, N...>{}(idx...),
+#endif
+            m_data[meta::linearized_index<sizeof...(idx) - 1, N...>{}(idx...)];
     }
 
     template <size_type... idx>
@@ -200,21 +207,15 @@ public:
         static_assert(sizeof...(idx) == sizeof...(N), "dimension mismatch");
         static_assert(meta::all<size_less<idx, N>::value...>::value,
                       "index out of bounds");
-        check_bounds(meta::make_index_sequence<sizeof...(idx)>{}, idx...);
-        size_type index = linearized_index(
-            meta::make_index_sequence<sizeof...(idx) - 1>{}, idx...);
-        return m_data[index];
+        return this->operator()(idx...);
     }
 
     template <size_type... idx>
-    CXX14_CONSTEXPR value_type get() const noexcept {
+    constexpr value_type get() const noexcept {
         static_assert(sizeof...(idx) == sizeof...(N), "dimension mismatch");
         static_assert(meta::all<size_less<idx, N>::value...>::value,
                       "index out of bounds");
-        check_bounds(meta::make_index_sequence<sizeof...(idx)>{}, idx...);
-        size_type index = linearized_index(
-            meta::make_index_sequence<sizeof...(idx) - 1>{}, idx...);
-        return m_data[index];
+        return this->operator()(idx...);
     }
 
     template <size_type i>
@@ -226,8 +227,6 @@ public:
     constexpr size_type size() const noexcept {
         return size_product<N...>::value;
     }
-
-#undef check_bounds
 };
 
 } // namespace math
