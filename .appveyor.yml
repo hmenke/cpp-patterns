@@ -30,7 +30,7 @@ after_build:
   - cmd: copy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\redist\1033\vcredist_x64.exe" ..\cpp-patterns-install\
   # TODO: This just dumps the whole build dir.  We should do a more fine grained selection of files.
   - cmd: xcopy /E . ..\cpp-patterns-install\
-  - cmd: copy C:\Tools\vcpkg\packages\zeromq_x64-windows\bin\libzmq.dll ..\cpp-patterns-install\
+  - cmd: copy C:\Tools\vcpkg\installed\x64-windows\debug\bin\libzmq*.dll ..\cpp-patterns-install\
   - cmd: 7z a -tzip cpp-patterns-windows-x86_64.zip ..\cpp-patterns-install > nul
 
 artifacts:
