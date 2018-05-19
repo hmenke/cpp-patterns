@@ -4,8 +4,8 @@ environment:
   MINICONDA_ROOT: C:\Miniconda36-x64
   GENERATOR: Visual Studio 14 2015 Win64
   CONFIG: Release
-  BOOST_ROOT: C:\Libraries\boost_1_59_0
-  BOOST_LIBRARYDIR: C:\Libraries\boost_1_59_0\lib64-msvc-14.0
+  BOOST_ROOT: "C:\\Libraries\\boost_1_60_0"
+  BOOST_LIBRARYDIR: "C:\\Libraries\\boost_1_60_0\\lib64-msvc-14.0"
   PATH: "%BOOST_LIBRARYDIR%;%PATH%"
 
 install:
@@ -13,10 +13,6 @@ install:
   - ps: choco install -y --no-progress -r swig --version 3.0.9
   - cmd: call %MINICONDA_ROOT%\Scripts\activate.bat
   # Install ZMQ
-  - cmd: cd C:\Tools\vcpkg
-  - cmd: git pull
-  - cmd: .\bootstrap-vcpkg.bat
-  - cmd: cd C:\projects\cpp-patterns
   - cmd: C:\Tools\vcpkg\vcpkg install zeromq:x64-windows
 
 cache:
