@@ -1,8 +1,8 @@
-#include <cassert>
+// Copyright (c) 2018 Henri Menke. All rights reserved.
+
 #include <iostream>
 #include <stdexcept>
 #include <string>
-#include <tuple>
 #include <type_traits>
 
 #ifdef __CUDACC__
@@ -183,7 +183,7 @@ public:
     DEVICE_FUNC const_pointer data() const noexcept { return m_data; }
 
     template <typename... Idx>
-    DEVICE_FUNC CXX14_CONSTEXPR reference operator()(Idx... idx) noexcept {
+    DEVICE_FUNC CXX14_CONSTEXPR reference operator()(Idx... idx) {
         static_assert(sizeof...(idx) == sizeof...(N), "dimension mismatch");
         static_assert(
             meta::all<std::is_convertible<Idx, size_type>::value...>::value,
@@ -196,7 +196,7 @@ public:
     }
 
     template <typename... Idx>
-    DEVICE_FUNC constexpr value_type operator()(Idx... idx) const noexcept {
+    DEVICE_FUNC constexpr value_type operator()(Idx... idx) const {
         static_assert(sizeof...(idx) == sizeof...(N), "dimension mismatch");
         static_assert(
             meta::all<std::is_convertible<Idx, size_type>::value...>::value,
@@ -209,7 +209,7 @@ public:
     }
 
     template <size_type... idx>
-    DEVICE_FUNC CXX14_CONSTEXPR reference get() noexcept {
+    DEVICE_FUNC CXX14_CONSTEXPR reference get() {
         static_assert(sizeof...(idx) == sizeof...(N), "dimension mismatch");
         static_assert(meta::all<size_less<idx, N>::value...>::value,
                       "index out of bounds");
@@ -217,7 +217,7 @@ public:
     }
 
     template <size_type... idx>
-    DEVICE_FUNC constexpr value_type get() const noexcept {
+    DEVICE_FUNC constexpr value_type get() const {
         static_assert(sizeof...(idx) == sizeof...(N), "dimension mismatch");
         static_assert(meta::all<size_less<idx, N>::value...>::value,
                       "index out of bounds");
@@ -233,6 +233,18 @@ public:
     DEVICE_FUNC constexpr size_type size() const noexcept {
         return size_product<N...>::value;
     }
+
+    // Maybe add these member functions
+    // - at
+    // - (c,r,cr)begin, (c,r,cr)end
+    // - front, back (how useful are those?)
+    // Maybe add these operators
+    // - operator==
+    // - operator!=
+    // - operator<
+    // - operator<=
+    // - operator>
+    // - operator>=
 };
 
 } // namespace math
