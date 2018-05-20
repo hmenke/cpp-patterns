@@ -11,6 +11,7 @@ script:
 
 addons:
   apt:
+    update: true
     packages:
     - doxygen
     - libboost-dev
@@ -27,3 +28,5 @@ matrix:
   - if: branch = master
     env: docs=yes
     script: bash doc/publish_documentation.sh
+  allow_failures:
+    - env: docs=yes
