@@ -12,6 +12,7 @@ script:
 addons:
   apt:
     packages:
+    - doxygen
     - libboost-dev
     - libboost-serialization-dev
     - libzmq3-dev
@@ -19,6 +20,10 @@ addons:
     - python3-zmq
     - swig
 
-compiler:
-- clang
-#- gcc # too old :(
+matrix:
+  include:
+  - compiler: clang
+  # compiler: gcc
+  - if: branch = master
+    env: docs=yes
+    script: bash doc/publish_documentation.sh

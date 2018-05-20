@@ -745,8 +745,17 @@ WARN_LOGFILE           =
 # spaces.
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = $(SOURCE_DIR) \
-                         $(SOURCE_DIR)/doc
+INPUT                  = $(SOURCE_DIR)/argument-count \
+                         $(SOURCE_DIR)/detection-idiom \
+                         $(SOURCE_DIR)/doc \
+                         $(SOURCE_DIR)/eigen_cuda \
+                         $(SOURCE_DIR)/enable_if \
+                         $(SOURCE_DIR)/instantiator_function \
+                         $(SOURCE_DIR)/integer_sequence \
+                         $(SOURCE_DIR)/multi_array \
+                         $(SOURCE_DIR)/python_callback \
+                         $(SOURCE_DIR)/python_zmq_communication \
+                         $(SOURCE_DIR)/swig_pickle
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses

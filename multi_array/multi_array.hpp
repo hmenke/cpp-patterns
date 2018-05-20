@@ -213,7 +213,7 @@ public:
 
     /// \overload DEVICE_FUNC CXX14_CONSTEXPR reference operator()(Idx... idx)
     template <typename... Idx>
-    DEVICE_FUNC constexpr value_type operator()(Idx... idx) const
+    DEVICE_FUNC constexpr const_reference operator()(Idx... idx) const
 #ifdef NDEBUG
         noexcept
 #endif
