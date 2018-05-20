@@ -8,6 +8,10 @@ else()
   set(COMPILER_WARNINGS "-Wall -Wextra -Wpedantic -Weffc++")
 endif()
 
+# Add documentation
+
+add_subdirectory(doc)
+
 # Add patterns
 
 add_subdirectory(argument-count)

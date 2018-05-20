@@ -3,6 +3,10 @@ cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 project(multi_array CXX)
 set(CMAKE_CXX_STANDARD 11)
 
+# Include current directory
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+
 # Add the executable
 
 file(GLOB SOURCE_FILES *.cpp)
