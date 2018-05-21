@@ -16,6 +16,7 @@ add_subdirectory(doc)
 
 add_subdirectory(argument-count)
 add_subdirectory(detection-idiom)
+#add_subdirectory(device_matrix)
 #add_subdirectory(eigen_cuda)
 #add_subdirectory(enable_if) # has no CMakeLists.txt
 add_subdirectory(integer_sequence)

@@ -122,7 +122,7 @@ namespace math {
 
 /// Multidimensional array similar to `std::array`
 ///
-/// Storage is always in column-major order
+/// Storage is always in row-major order for easy list initialization
 ///
 /// \tparam T value type
 /// \tparam N list of dimensions
