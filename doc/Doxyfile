@@ -751,7 +751,6 @@ INPUT                  = $(SOURCE_DIR)/argument-count \
                          $(SOURCE_DIR)/doc \
                          $(SOURCE_DIR)/eigen_cuda \
                          $(SOURCE_DIR)/enable_if \
-                         $(SOURCE_DIR)/instantiator_function \
                          $(SOURCE_DIR)/integer_sequence \
                          $(SOURCE_DIR)/multi_array \
                          $(SOURCE_DIR)/python_callback \
