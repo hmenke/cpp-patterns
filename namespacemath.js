@@ -1,4 +1,4 @@
 var namespacemath =
 [
-    [ "multi_array", "classmath_1_1multi__array.html", "classmath_1_1multi__array" ]
+    [ "device_matrix", "classmath_1_1device__matrix.html", "classmath_1_1device__matrix" ]
 ];

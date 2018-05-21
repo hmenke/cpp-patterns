@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['example_2ecpp',['example.cpp',['../example_8cpp.html',1,'']]]
+  ['inverse_2ecu',['inverse.cu',['../inverse_8cu.html',1,'']]]
 ];

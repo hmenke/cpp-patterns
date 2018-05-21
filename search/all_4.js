@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['data',['data',['../classmath_1_1multi__array.html#ae6501fa35545c69e882276033f0b0204',1,'math::multi_array::data() noexcept'],['../classmath_1_1multi__array.html#a0984e87629e1bdc4ce80a547f67bae49',1,'math::multi_array::data() const noexcept']]],
-  ['device_5ffunc',['DEVICE_FUNC',['../multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9',1,'multi_array.hpp']]],
-  ['difference_5ftype',['difference_type',['../classmath_1_1multi__array.html#a500adafcfaba821f8a2b3f36275720ae',1,'math::multi_array']]],
-  ['do_5fmake_5fsignature',['do_make_signature',['../structinternal_1_1do__make__signature.html',1,'internal']]],
-  ['do_5fmake_5fsignature_3c_200_2c_20arg_2c_20args_2e_2e_2e_3e',['do_make_signature&lt; 0, Arg, Args...&gt;',['../structinternal_1_1do__make__signature_3_010_00_01Arg_00_01Args_8_8_8_4.html',1,'internal']]],
-  ['do_5fmake_5fsignature_5findeed',['do_make_signature_indeed',['../structinternal_1_1do__make__signature__indeed.html',1,'internal']]],
-  ['detection_20idiom',['Detection Idiom',['../md__home_travis_build_hmenke_cpp-patterns_detection-idiom_README.html',1,'']]]
+  ['identity',['Identity',['../group__generators.html#ga6fecf5f085c6c749c9b27d33d4ff0ee6',1,'math::device_matrix']]],
+  ['inverse',['inverse',['../group__linalg.html#ga6efd0abd431562d984f6bf0f4df28e4b',1,'math::device_matrix::inverse()'],['../namespacecuda.html#a3367b960e8a2e3441233ee89cf4f94b5',1,'cuda::inverse()']]],
+  ['inverse_2ecu',['inverse.cu',['../inverse_8cu.html',1,'']]],
+  ['inverse_5finplace',['inverse_inplace',['../namespacecuda.html#a9d070854d1b1b878b5db0e0189f60dd0',1,'cuda']]],
+  ['inverse_5finplace_5fkernel',['inverse_inplace_kernel',['../inverse_8cu.html#a19f719e3a6b75da4166ffad8394d2553',1,'inverse.cu']]],
+  ['inverse_5fkernel',['inverse_kernel',['../inverse_8cu.html#aa8f67890d7ba6a251d95abe49cf17191',1,'inverse.cu']]],
+  ['iterator',['iterator',['../classmath_1_1device__matrix.html#a6be87df8670f2db0f62bcd7f5f96a0e6',1,'math::device_matrix']]]
 ];

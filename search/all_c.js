@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['operator_20t_20_2a',['operator T *',['../structcptr.html#a968c7008592513da13f45f0153559fbd',1,'cptr']]],
-  ['operator_20void_20_2a',['operator void *',['../classzmq_1_1socket.html#a08eda819f201e8c08784108dd812ffaf',1,'zmq::socket::operator void *()'],['../classzmq_1_1context.html#ace14e505ba6d14c89927b99876914614',1,'zmq::context::operator void *()']]],
-  ['operator_28_29',['operator()',['../structB.html#ab39485ae22f99b038de369d51a10059d',1,'B::operator()()'],['../structVisitor.html#a6c476551d3cb6e543f98cae8cf471e75',1,'Visitor::operator()()'],['../classmath_1_1multi__array.html#a808e4bba0d4197e15db991f70431148b',1,'math::multi_array::operator()(Idx...idx)'],['../classmath_1_1multi__array.html#a7c61a77390b747b7e9822e35b7af4dc1',1,'math::multi_array::operator()(Idx...idx) const '],['../structconversions_1_1return__from__python.html#ae9bb58d5bd6260d0c18b46132b0575a0',1,'conversions::return_from_python::operator()()'],['../structconversions_1_1return__from__python_3_01double_01_4.html#a30baf95045e0f9a7aeb2106a929e966b',1,'conversions::return_from_python&lt; double &gt;::operator()()']]],
-  ['operator_5b_5d',['operator[]',['../structA.html#acd0e588d4e7d3d28268aea4c8372a1ec',1,'A::operator[]()'],['../classVector.html#ad2e78b3cab0b5a52eb56be75a7a728a2',1,'Vector::operator[](size_t i)'],['../classVector.html#a7d42b48754a309b56ae880865d42c74e',1,'Vector::operator[](size_t i) const ']]]
+  ['value_5ftype',['value_type',['../classmath_1_1device__matrix.html#aa8d5aee7b8c0a1e63870a5875566c8fd',1,'math::device_matrix']]]
 ];

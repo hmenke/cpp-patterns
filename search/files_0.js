@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['communication_2eh',['communication.h',['../communication_8h.html',1,'']]],
-  ['corefunctions_2ecpp',['CoreFunctions.cpp',['../CoreFunctions_8cpp.html',1,'']]],
-  ['corefunctions_2ehpp',['CoreFunctions.hpp',['../CoreFunctions_8hpp.html',1,'']]]
+  ['device_5fmatrix_2ecuh',['device_matrix.cuh',['../device__matrix_8cuh.html',1,'']]]
 ];

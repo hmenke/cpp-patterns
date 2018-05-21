@@ -1,39 +1,28 @@
 var NAVTREE =
 [
   [ "CPP Patterns", "index.html", [
-    [ "Argument Counting", "md__home_travis_build_hmenke_cpp-patterns_argument-count_README.html", null ],
-    [ "Detection Idiom", "md__home_travis_build_hmenke_cpp-patterns_detection-idiom_README.html", null ],
-    [ "Eigen with CUDA", "md__home_travis_build_hmenke_cpp-patterns_eigen_cuda_README.html", null ],
-    [ "enable_if", "md__home_travis_build_hmenke_cpp-patterns_enable_if_README.html", null ],
-    [ "Apply a function for elements in a tuple", "md__home_travis_build_hmenke_cpp-patterns_integer_sequence_README.html", null ],
+    [ "Modules", "modules.html", "modules" ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ]
       ] ]
     ] ],
     [ "Data Structures", null, [
       [ "Data Structures", "annotated.html", "annotated" ],
       [ "Data Structure Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Data Fields", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ],
-        [ "Typedefs", "functions_type.html", null ],
-        [ "Related Functions", "functions_rela.html", null ]
+        [ "Typedefs", "functions_type.html", null ]
       ] ]
     ] ],
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "Globals", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+        [ "Functions", "globals_func.html", null ]
       ] ]
     ] ]
   ] ]
@@ -41,7 +30,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"CoreFunctions_8cpp.html"
+"annotated.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

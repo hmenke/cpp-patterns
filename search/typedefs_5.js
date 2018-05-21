@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reference',['reference',['../classmath_1_1multi__array.html#af270a8b39a278579270bf0acfdab3f94',1,'math::multi_array']]]
+  ['size_5ftype',['size_type',['../classmath_1_1device__matrix.html#a7a41645c5b7420ef964905fdc9c4c437',1,'math::device_matrix']]]
 ];
