@@ -1,5 +1,5 @@
-#include <iostream>
 #include "unroll.hpp"
+#include <iostream>
 
 int main() {
     int sum = 0;

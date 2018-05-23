@@ -1,4 +1,5 @@
 // Copyright (c) 2018 Henri Menke. All rights reserved.
+#pragma once
 
 #include <stdexcept>
 #include <string>
