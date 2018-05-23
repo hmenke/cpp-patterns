@@ -119,8 +119,6 @@ struct check_bounds<0, N...> {
 } // namespace meta
 /// \endcond
 
-namespace math {
-
 /// Multidimensional array similar to `std::array`
 ///
 /// Storage is always in row-major order for easy list initialization
@@ -244,7 +242,5 @@ public:
         return size_product<N...>::value;
     }
 };
-
-} // namespace math
 
 #undef CXX14_CONSTEXPR
