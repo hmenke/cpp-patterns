@@ -38,8 +38,8 @@ struct make_index_range_descending<U, U, Is...> : index_range<Is...> {};
 
 template <ssize_t L, ssize_t U>
 using make_index_range =
-    typename std::conditional < L<U, make_index_range_ascending<L, U>,
-                                  make_index_range_descending<L, U>>::type;
+    typename std::conditional<(L < U), make_index_range_ascending<L, U>,
+                              make_index_range_descending<L, U>>::type;
 
 template <ssize_t... I, typename F, typename... Indices>
 constexpr inline int unroll_impl(F &&f, index_range<I...>, Indices... v) {
