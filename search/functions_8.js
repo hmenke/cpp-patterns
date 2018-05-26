@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['size',['size',['../classmath_1_1device__matrix.html#a2941dd78abea7359f34a0665e3ebf869',1,'math::device_matrix']]],
-  ['swap',['swap',['../classmath_1_1device__matrix.html#ad86293530fff1910859b2e29e37a54dc',1,'math::device_matrix']]]
+  ['main',['main',['../argument-count_2test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test.cpp'],['../detection-idiom_2test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test.cpp'],['../test_8cu.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test.cu'],['../inverse_8cu.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main(void):&#160;inverse.cu'],['../enable__if_2test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test.cpp'],['../integer__sequence_2test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test.cpp'],['../example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;example.cpp'],['../unroll_2test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;test.cpp']]],
+  ['multi_5farray',['multi_array',['../classmulti__array.html#adb1b388c6c4107e7ce61104f82395fb4',1,'multi_array::multi_array()'],['../classmulti__array.html#abd87cb3c065b9ce27db7c04c1f962c00',1,'multi_array::multi_array(U...data)']]]
 ];

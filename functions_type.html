@@ -76,6 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li class="current"><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
@@ -83,7 +84,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
+      <li><a href="functions_vars.html"><span>Variables</span></a></li>
       <li class="current"><a href="functions_type.html"><span>Typedefs</span></a></li>
+      <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,7 +109,7 @@ $(document).ready(function(){initNavTree('functions_type.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -119,27 +122,46 @@ $(document).ready(function(){initNavTree('functions_type.html','');});
 &#160;<ul>
 <li>const_pointer
 : <a class="el" href="classmath_1_1device__matrix.html#aceb4396ebe8f3885617df6ed7d4d7052">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#afc30e90481f3172b69cc3b629499e935">multi_array&lt; T, N &gt;</a>
 </li>
 <li>const_reference
 : <a class="el" href="classmath_1_1device__matrix.html#a9e0168e18a5910783db313e29b259535">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#a5cc55d0a8b9b2fdddad28b5fe5a401a7">multi_array&lt; T, N &gt;</a>
 </li>
 <li>difference_type
 : <a class="el" href="classmath_1_1device__matrix.html#a2ca321fdea0549b45679e8324e4db45b">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#a74d6f122476c67b92d059da21626d58d">multi_array&lt; T, N &gt;</a>
 </li>
 <li>iterator
 : <a class="el" href="classmath_1_1device__matrix.html#a6be87df8670f2db0f62bcd7f5f96a0e6">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#a17a8fad84d4f70d85334b42f53ee5341">multi_array&lt; T, N &gt;</a>
 </li>
 <li>pointer
 : <a class="el" href="classmath_1_1device__matrix.html#a39f68b6ae0f70c6b872b30bff6dfcdad">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#a1198165daec58c1ab766d3cc72994da8">multi_array&lt; T, N &gt;</a>
 </li>
 <li>reference
 : <a class="el" href="classmath_1_1device__matrix.html#a50adf750a9a5b60e0c2ef226cc3fa67a">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#af3159235e2ab1ca859164571dbce431d">multi_array&lt; T, N &gt;</a>
 </li>
 <li>size_type
 : <a class="el" href="classmath_1_1device__matrix.html#a7a41645c5b7420ef964905fdc9c4c437">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#af2dbcee7fc8b39f59bfaba013ddbf1c5">multi_array&lt; T, N &gt;</a>
+</li>
+<li>type
+: <a class="el" href="structinternal_1_1do__make__signature.html#a38370811c3e9b739b466e33be5337d2e">internal::do_make_signature&lt; N, Arg, Args &gt;</a>
+, <a class="el" href="structinternal_1_1do__make__signature_3_010_00_01Arg_00_01Args_8_8_8_4.html#aa052529c9670e495d48a13b6ee47fa49">internal::do_make_signature&lt; 0, Arg, Args...&gt;</a>
+, <a class="el" href="structinternal_1_1make__signature.html#afbce8efb870cfc8b570e0797737ef72b">internal::make_signature&lt; N, Arg &gt;</a>
+, <a class="el" href="structinternal_1_1make__signature_3_010_00_01Arg_01_4.html#ad9fb9ae10de9869887619064725eb88b">internal::make_signature&lt; 0, Arg &gt;</a>
+, <a class="el" href="structmake__integer__sequence__impl.html#acc1acb23dd4ae5b8622b68f2b55d81ec">make_integer_sequence_impl&lt; T, N, Is &gt;</a>
+, <a class="el" href="structmake__integer__sequence__impl_3_01T_00_01std_1_1integral__constant_3_01T_00_010_01_4_00_01Is_8_8_8_4.html#a2128c889fb5055babae24948274e430b">make_integer_sequence_impl&lt; T, std::integral_constant&lt; T, 0 &gt;, Is...&gt;</a>
+, <a class="el" href="structmake__integer__sequence__t.html#a9c30022d81df25754fb3e36008d6ee0c">make_integer_sequence_t&lt; T, N &gt;</a>
+, <a class="el" href="structmake__integer__sequence__t_3_01T_00_01std_1_1integral__constant_3_01T_00_010_01_4_01_4.html#aadecf81d23c72bcacc36efe5c189819e">make_integer_sequence_t&lt; T, std::integral_constant&lt; T, 0 &gt; &gt;</a>
+, <a class="el" href="structmake__integer__sequence__t_3_01T_00_01std_1_1integral__constant_3_01T_00_011_01_4_01_4.html#ac1ae480d73d9e875470a17695c27d24d">make_integer_sequence_t&lt; T, std::integral_constant&lt; T, 1 &gt; &gt;</a>
 </li>
 <li>value_type
 : <a class="el" href="classmath_1_1device__matrix.html#aa8d5aee7b8c0a1e63870a5875566c8fd">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#a2210b5ae45264e7b795778dfa314f8bd">multi_array&lt; T, N &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

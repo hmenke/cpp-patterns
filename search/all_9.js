@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['reference',['reference',['../classmath_1_1device__matrix.html#a50adf750a9a5b60e0c2ef226cc3fa67a',1,'math::device_matrix']]],
-  ['rows',['rows',['../classmath_1_1device__matrix.html#aa233d4457cf4752cfea04b5163c09272',1,'math::device_matrix']]]
+  ['linear_20algebra',['Linear algebra',['../group__linalg.html',1,'']]],
+  ['lower',['lower',['../structrange.html#a5772d1cbafec8af0069d0644e125505f',1,'range']]]
 ];

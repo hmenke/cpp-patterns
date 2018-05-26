@@ -7,13 +7,16 @@
 
 var indexSectionsWithContent =
 {
-  0: "acdfilmoprstv",
-  1: "d",
-  2: "cm",
-  3: "dit",
-  4: "acdfimorst",
-  5: "cdiprsv",
-  6: "acl"
+  0: "abcdefghilmnoprstuvwz~",
+  1: "abcdehimrstuv",
+  2: "cimz",
+  3: "cdeimpstu",
+  4: "abcdefgimnoprstuvw~",
+  5: "lpsuv",
+  6: "cdimprstuv",
+  7: "b",
+  8: "cd",
+  9: "acl"
 };
 
 var indexSectionNames =
@@ -23,8 +26,11 @@ var indexSectionNames =
   2: "namespaces",
   3: "files",
   4: "functions",
-  5: "typedefs",
-  6: "groups"
+  5: "variables",
+  6: "typedefs",
+  7: "related",
+  8: "defines",
+  9: "groups"
 };
 
 function convertToId(search)

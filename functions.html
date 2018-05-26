@@ -76,6 +76,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li class="current"><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
@@ -83,7 +84,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li class="current"><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
+      <li><a href="functions_vars.html"><span>Variables</span></a></li>
       <li><a href="functions_type.html"><span>Typedefs</span></a></li>
+      <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow4" class="tabs3">
+    <ul class="tablist">
+      <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_b"><span>b</span></a></li>
+      <li><a href="#index_c"><span>c</span></a></li>
+      <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_e"><span>e</span></a></li>
+      <li><a href="#index_f"><span>f</span></a></li>
+      <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_i"><span>i</span></a></li>
+      <li><a href="#index_l"><span>l</span></a></li>
+      <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
+      <li><a href="#index_o"><span>o</span></a></li>
+      <li><a href="#index_p"><span>p</span></a></li>
+      <li><a href="#index_r"><span>r</span></a></li>
+      <li><a href="#index_s"><span>s</span></a></li>
+      <li><a href="#index_t"><span>t</span></a></li>
+      <li><a href="#index_u"><span>u</span></a></li>
+      <li><a href="#index_v"><span>v</span></a></li>
+      <li><a href="#index_w"><span>w</span></a></li>
+      <li class="current"><a href="#index_~"><span>~</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -106,7 +133,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Groups</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -116,31 +143,102 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </div>
 
 <div class="contents">
-<div class="textblock">Here is a list of all struct and union fields with links to the structures/unions they belong to:</div><ul>
+<div class="textblock">Here is a list of all struct and union fields with links to the structures/unions they belong to:</div>
+
+<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
 <li>almostEqual()
 : <a class="el" href="group__compare.html#ga463ae453ef0cc0aacd43fa4685a186ce">math::device_matrix&lt; T &gt;</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
+<li>bar()
+: <a class="el" href="structA.html#a2fae23221e7cc85c29273e468fb1f5a3">A</a>
+</li>
+<li>begin()
+: <a class="el" href="classmulti__array.html#a4c3b2213684346cb42c2418f567625a1">multi_array&lt; T, N &gt;</a>
+</li>
+<li>bind()
+: <a class="el" href="classzmq_1_1socket.html#ace7cdedf2083e212e22327d52a3a3ee2">zmq::socket</a>
+</li>
+<li>boost::serialization::access
+: <a class="el" href="classTest.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">Test</a>
+</li>
+<li>Bytes()
+: <a class="el" href="structBytes.html#a9484bbe1b4372c40c0653c36d03ebfbf">Bytes</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>cols()
 : <a class="el" href="classmath_1_1device__matrix.html#a803a5ff359abf164a8077c1732ef7143">math::device_matrix&lt; T &gt;</a>
 </li>
+<li>connect()
+: <a class="el" href="classzmq_1_1socket.html#a81475874c26aa297f64f2fcdadd8ac6c">zmq::socket</a>
+</li>
 <li>const_pointer
 : <a class="el" href="classmath_1_1device__matrix.html#aceb4396ebe8f3885617df6ed7d4d7052">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#afc30e90481f3172b69cc3b629499e935">multi_array&lt; T, N &gt;</a>
 </li>
 <li>const_reference
 : <a class="el" href="classmath_1_1device__matrix.html#a9e0168e18a5910783db313e29b259535">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#a5cc55d0a8b9b2fdddad28b5fe5a401a7">multi_array&lt; T, N &gt;</a>
 </li>
+<li>construct()
+: <a class="el" href="classTest.html#a94eb779d002dbf9f5ae451a2f013dc4b">Test</a>
+</li>
+<li>context()
+: <a class="el" href="classzmq_1_1context.html#a8e8aa081ff6b48908f6d584a1fe7a94a">zmq::context</a>
+</li>
+<li>cptr()
+: <a class="el" href="structcptr.html#a6b6c02e7c143bcaf34dbdd922c7dd34b">cptr&lt; T &gt;</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>data()
 : <a class="el" href="classmath_1_1device__matrix.html#a9110ffc86f1d8e0197920369023a8e9d">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#a05d50604f29a75930a37daa8736504e3">multi_array&lt; T, N &gt;</a>
 </li>
 <li>device_matrix()
 : <a class="el" href="classmath_1_1device__matrix.html#ab2a8a822b7ea2eca33a9b7f2591ca5fa">math::device_matrix&lt; T &gt;</a>
 </li>
 <li>difference_type
 : <a class="el" href="classmath_1_1device__matrix.html#a2ca321fdea0549b45679e8324e4db45b">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#a74d6f122476c67b92d059da21626d58d">multi_array&lt; T, N &gt;</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>end()
+: <a class="el" href="classmulti__array.html#ac5d19953de49c4657837e939272fc870">multi_array&lt; T, N &gt;</a>
+</li>
+<li>error()
+: <a class="el" href="classzmq_1_1error.html#a37f7ba24ff8de3e1b3eb33188a9b5bd0">zmq::error</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
 <li>fill()
 : <a class="el" href="classmath_1_1device__matrix.html#a34069b3c79e4663571822d2560110ed0">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#a21809726c6d6ea9437d0dba7dddb69d6">multi_array&lt; T, N &gt;</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>get()
+: <a class="el" href="classTest.html#a87e95fb62c1e3210910489138366dfb5">Test</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>Identity()
 : <a class="el" href="group__generators.html#ga6fecf5f085c6c749c9b27d33d4ff0ee6">math::device_matrix&lt; T &gt;</a>
 </li>
@@ -149,9 +247,47 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>iterator
 : <a class="el" href="classmath_1_1device__matrix.html#a6be87df8670f2db0f62bcd7f5f96a0e6">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#a17a8fad84d4f70d85334b42f53ee5341">multi_array&lt; T, N &gt;</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>lower
+: <a class="el" href="structrange.html#a5772d1cbafec8af0069d0644e125505f">range&lt; Lower, Upper &gt;</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
+<li>multi_array()
+: <a class="el" href="classmulti__array.html#adb1b388c6c4107e7ce61104f82395fb4">multi_array&lt; T, N &gt;</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>num()
+: <a class="el" href="classzmq_1_1error.html#a1cb62859efcf2cb155c286d8c6be46cc">zmq::error</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<li>operator T *()
+: <a class="el" href="structcptr.html#a968c7008592513da13f45f0153559fbd">cptr&lt; T &gt;</a>
+</li>
+<li>operator void *()
+: <a class="el" href="classzmq_1_1context.html#ace14e505ba6d14c89927b99876914614">zmq::context</a>
+, <a class="el" href="classzmq_1_1socket.html#a08eda819f201e8c08784108dd812ffaf">zmq::socket</a>
 </li>
 <li>operator()()
-: <a class="el" href="classmath_1_1device__matrix.html#aa0e29e6ef36b8930d8d87321178f89a4">math::device_matrix&lt; T &gt;</a>
+: <a class="el" href="structB.html#ab39485ae22f99b038de369d51a10059d">B</a>
+, <a class="el" href="structconversions_1_1return__from__python.html#ae9bb58d5bd6260d0c18b46132b0575a0">conversions::return_from_python&lt; T &gt;</a>
+, <a class="el" href="structconversions_1_1return__from__python_3_01double_01_4.html#a30baf95045e0f9a7aeb2106a929e966b">conversions::return_from_python&lt; double &gt;</a>
+, <a class="el" href="classmath_1_1device__matrix.html#a93607ac18cfe1a72e64e90db2fec6fb8">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#aa07a7249ea832e46547b552febc9f6f0">multi_array&lt; T, N &gt;</a>
+, <a class="el" href="structVisitor.html#a6c476551d3cb6e543f98cae8cf471e75">Visitor</a>
 </li>
 <li>operator*()
 : <a class="el" href="group__arithmetic.html#ga6fa157cb5b84364e4e4354495c893d3a">math::device_matrix&lt; T &gt;</a>
@@ -165,29 +301,117 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>operator==()
 : <a class="el" href="group__compare.html#gac7a57d6e921e481f034cda636c00dbc5">math::device_matrix&lt; T &gt;</a>
 </li>
+<li>operator[]()
+: <a class="el" href="structA.html#acd0e588d4e7d3d28268aea4c8372a1ec">A</a>
+, <a class="el" href="classVector.html#a7d42b48754a309b56ae880865d42c74e">Vector&lt; Scalar, n &gt;</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>pointer
 : <a class="el" href="classmath_1_1device__matrix.html#a39f68b6ae0f70c6b872b30bff6dfcdad">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#a1198165daec58c1ab766d3cc72994da8">multi_array&lt; T, N &gt;</a>
 </li>
+<li>ptr
+: <a class="el" href="structcptr.html#a26946eb0cad137c8cf8d5db988a0c416">cptr&lt; T &gt;</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
 <li>reference
 : <a class="el" href="classmath_1_1device__matrix.html#a50adf750a9a5b60e0c2ef226cc3fa67a">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#af3159235e2ab1ca859164571dbce431d">multi_array&lt; T, N &gt;</a>
 </li>
 <li>rows()
 : <a class="el" href="classmath_1_1device__matrix.html#aa233d4457cf4752cfea04b5163c09272">math::device_matrix&lt; T &gt;</a>
 </li>
+</ul>
+
+
+<h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>send()
+: <a class="el" href="classzmq_1_1socket.html#acd160b7f66352df506d632ca634bf265">zmq::socket</a>
+</li>
 <li>size()
 : <a class="el" href="classmath_1_1device__matrix.html#a2941dd78abea7359f34a0665e3ebf869">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#a43bb697e36cda2dbc301b04851860c6a">multi_array&lt; T, N &gt;</a>
 </li>
 <li>size_type
 : <a class="el" href="classmath_1_1device__matrix.html#a7a41645c5b7420ef964905fdc9c4c437">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#af2dbcee7fc8b39f59bfaba013ddbf1c5">multi_array&lt; T, N &gt;</a>
+</li>
+<li>socket()
+: <a class="el" href="classzmq_1_1context.html#a3d87aad5871877d35e280285c2ac8af5">zmq::context</a>
+, <a class="el" href="classzmq_1_1socket.html#a76502633ae588e388535a9f7ff39a602">zmq::socket</a>
+</li>
+<li>str
+: <a class="el" href="structBytes.html#ac7a1fefa6b8ab3e8ce3f8a2f9361c678">Bytes</a>
+, <a class="el" href="structinternal_1_1do__make__signature__indeed.html#aa0472ca044779d816ff37fbbc2e271df">internal::do_make_signature_indeed&lt; Args &gt;</a>
 </li>
 <li>swap()
 : <a class="el" href="classmath_1_1device__matrix.html#ad86293530fff1910859b2e29e37a54dc">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#ae8d993455a66b679d8568b922da2e5c8">multi_array&lt; T, N &gt;</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
+<li>Test()
+: <a class="el" href="classTest.html#a99f2bbfac6c95612322b0f10e607ebe5">Test</a>
 </li>
 <li>transpose()
 : <a class="el" href="group__linalg.html#gab5574c35b07f69c45b889ceaebc6e9e6">math::device_matrix&lt; T &gt;</a>
 </li>
+<li>type
+: <a class="el" href="structinternal_1_1do__make__signature.html#a38370811c3e9b739b466e33be5337d2e">internal::do_make_signature&lt; N, Arg, Args &gt;</a>
+, <a class="el" href="structinternal_1_1do__make__signature_3_010_00_01Arg_00_01Args_8_8_8_4.html#aa052529c9670e495d48a13b6ee47fa49">internal::do_make_signature&lt; 0, Arg, Args...&gt;</a>
+, <a class="el" href="structinternal_1_1make__signature.html#afbce8efb870cfc8b570e0797737ef72b">internal::make_signature&lt; N, Arg &gt;</a>
+, <a class="el" href="structinternal_1_1make__signature_3_010_00_01Arg_01_4.html#ad9fb9ae10de9869887619064725eb88b">internal::make_signature&lt; 0, Arg &gt;</a>
+, <a class="el" href="structmake__integer__sequence__impl.html#acc1acb23dd4ae5b8622b68f2b55d81ec">make_integer_sequence_impl&lt; T, N, Is &gt;</a>
+, <a class="el" href="structmake__integer__sequence__impl_3_01T_00_01std_1_1integral__constant_3_01T_00_010_01_4_00_01Is_8_8_8_4.html#a2128c889fb5055babae24948274e430b">make_integer_sequence_impl&lt; T, std::integral_constant&lt; T, 0 &gt;, Is...&gt;</a>
+, <a class="el" href="structmake__integer__sequence__t.html#a9c30022d81df25754fb3e36008d6ee0c">make_integer_sequence_t&lt; T, N &gt;</a>
+, <a class="el" href="structmake__integer__sequence__t_3_01T_00_01std_1_1integral__constant_3_01T_00_010_01_4_01_4.html#aadecf81d23c72bcacc36efe5c189819e">make_integer_sequence_t&lt; T, std::integral_constant&lt; T, 0 &gt; &gt;</a>
+, <a class="el" href="structmake__integer__sequence__t_3_01T_00_01std_1_1integral__constant_3_01T_00_011_01_4_01_4.html#ac1ae480d73d9e875470a17695c27d24d">make_integer_sequence_t&lt; T, std::integral_constant&lt; T, 1 &gt; &gt;</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>upper
+: <a class="el" href="structrange.html#a94cb3cd80d65cca26be89ac8f49d8171">range&lt; Lower, Upper &gt;</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
+<li>v
+: <a class="el" href="structVisitor.html#a13bbe963e57a51e5a8aec3642bf9ceb7">Visitor</a>
+</li>
 <li>value_type
 : <a class="el" href="classmath_1_1device__matrix.html#aa8d5aee7b8c0a1e63870a5875566c8fd">math::device_matrix&lt; T &gt;</a>
+, <a class="el" href="classmulti__array.html#a2210b5ae45264e7b795778dfa314f8bd">multi_array&lt; T, N &gt;</a>
+</li>
+<li>Vector()
+: <a class="el" href="classVector.html#a9f02da3beb09f870002ed35cbad21e16">Vector&lt; Scalar, n &gt;</a>
+</li>
+<li>Visitor()
+: <a class="el" href="structVisitor.html#a0eeea1e8889e4929b17424ee0081c147">Visitor</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
+<li>what()
+: <a class="el" href="classzmq_1_1error.html#a0faebc5955443c6dfe05095776ef3f86">zmq::error</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_~"></a>- ~ -</h3><ul>
+<li>~cptr()
+: <a class="el" href="structcptr.html#ad8d5e4d69f11e2342091d742b7093416">cptr&lt; T &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->

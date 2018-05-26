@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['cols',['cols',['../classmath_1_1device__matrix.html#a803a5ff359abf164a8077c1732ef7143',1,'math::device_matrix']]],
-  ['comparison',['Comparison',['../group__compare.html',1,'']]],
-  ['const_5fpointer',['const_pointer',['../classmath_1_1device__matrix.html#aceb4396ebe8f3885617df6ed7d4d7052',1,'math::device_matrix']]],
-  ['const_5freference',['const_reference',['../classmath_1_1device__matrix.html#a9e0168e18a5910783db313e29b259535',1,'math::device_matrix']]],
-  ['cuda',['cuda',['../namespacecuda.html',1,'']]],
-  ['convenience_20generator_20functions',['Convenience generator functions',['../group__generators.html',1,'']]]
+  ['access',['access',['../classTest.html#ac98d07dd8f7b70e16ccb9a01abf56b9c',1,'Test']]],
+  ['b',['B',['../structB.html',1,'']]],
+  ['bar',['bar',['../structA.html#a2fae23221e7cc85c29273e468fb1f5a3',1,'A']]],
+  ['begin',['begin',['../classmulti__array.html#a4c3b2213684346cb42c2418f567625a1',1,'multi_array']]],
+  ['bind',['bind',['../classzmq_1_1socket.html#ace7cdedf2083e212e22327d52a3a3ee2',1,'zmq::socket']]],
+  ['bytes',['Bytes',['../structBytes.html',1,'Bytes'],['../structBytes.html#a9484bbe1b4372c40c0653c36d03ebfbf',1,'Bytes::Bytes(char const *c)'],['../structBytes.html#aae9b19fc1935976f246aea79cc107ae9',1,'Bytes::Bytes(int i)'],['../structBytes.html#a0adc39cf986046df64931e8e747c0553',1,'Bytes::Bytes(char c)']]]
 ];

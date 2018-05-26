@@ -1,5 +1,8 @@
 var namespaces =
 [
+    [ "conversions", "namespaceconversions.html", null ],
     [ "cuda", "namespacecuda.html", null ],
-    [ "math", "namespacemath.html", null ]
+    [ "internal", "namespaceinternal.html", null ],
+    [ "math", "namespacemath.html", null ],
+    [ "zmq", "namespacezmq.html", null ]
 ];
