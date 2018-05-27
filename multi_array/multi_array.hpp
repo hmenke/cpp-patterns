@@ -244,3 +244,4 @@ public:
 };
 
 #undef CXX14_CONSTEXPR
+#undef DEVICE_FUNC

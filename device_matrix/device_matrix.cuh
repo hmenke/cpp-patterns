@@ -11,7 +11,23 @@
 #include <cublas_v2.h>
 #include <cusolverDn.h>
 
-namespace math {
+
+#ifdef __CUDACC__
+#    define DEVICE_FUNC __host__ __device__
+#else
+#    define DEVICE_FUNC
+#endif
+
+
+DEVICE_FUNC inline thrust::tuple<size_t, size_t>
+unravel_index(size_t index, size_t lda) {
+    size_t i, j;
+    i = index % lda;
+    index /= lda;
+    j = index;
+    return thrust::make_tuple(i, j);
+    ;
+}
 
 /// \cond
 
@@ -92,23 +108,13 @@ struct almostEqual {
     }
 };
 
-__host__ __device__ inline thrust::tuple<size_t, size_t>
-index_to_ij(size_t index, size_t lda) {
-    size_t i, j;
-    i = index % lda;
-    index /= lda;
-    j = index;
-    return thrust::make_tuple(i, j);
-    ;
-}
-
 template <typename T>
 struct IdentityGenerator {
     size_t lda;
 
     __host__ __device__ T operator()(size_t index) {
         size_t i, j;
-        thrust::tie(i, j) = index_to_ij(index, lda);
+        thrust::tie(i, j) = unravel_index(index, lda);
         return T(i == j ? 1.0 : 0.0);
     }
 };
@@ -274,10 +280,50 @@ public:
     /// \}
 };
 
-} // namespace math
 
 template <typename T>
-std::ostream &operator<<(std::ostream &os, math::device_matrix<T> const &m) {
+class device_matrix_view {
+public:
+    using value_type = T;
+    using size_type = std::size_t;
+    using difference_type = std::ptrdiff_t;
+    using reference = value_type &;
+    using const_reference = value_type const &;
+    using pointer = T*;
+    using const_pointer = T const *;
+    using iterator = pointer;
+
+private:
+    // Storage
+    size_type m_rows;
+    size_type m_cols;
+    T *m_data;
+
+public:
+    explicit device_matrix_view(pointer data, size_type rows, size_type cols)
+        : m_rows(rows), m_cols(cols), m_data(data) {}
+
+    explicit device_matrix_view(device_matrix<T> &v)
+        : m_rows(v.rows()), m_cols(v.cols()), m_data(thrust::raw_pointer_cast(v.data())) {}
+
+    DEVICE_FUNC reference operator()(size_type row, size_type col) noexcept {
+        return m_data[row + col * m_rows];
+    }
+
+    DEVICE_FUNC const_reference operator()(size_type row, size_type col) const noexcept {
+        return m_data[row + col * m_rows];
+    }
+
+    DEVICE_FUNC pointer data() noexcept { return m_data; }
+    DEVICE_FUNC const_pointer data() const noexcept { return m_data; }
+    DEVICE_FUNC size_type rows() const noexcept { return m_rows; }
+    DEVICE_FUNC size_type cols() const noexcept { return m_cols; }
+    DEVICE_FUNC size_type size() const noexcept { return m_rows * m_cols; }
+};
+
+
+template <typename T>
+std::ostream &operator<<(std::ostream &os, device_matrix<T> const &m) {
     os << '{';
     for (size_t i = 0; i < m.rows(); ++i) {
         if (i > 0) {
@@ -298,3 +344,6 @@ std::ostream &operator<<(std::ostream &os, math::device_matrix<T> const &m) {
     os << '}';
     return os;
 }
+
+
+#undef DEVICE_FUNC
