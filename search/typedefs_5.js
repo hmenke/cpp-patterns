@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['reference',['reference',['../classmath_1_1device__matrix.html#a50adf750a9a5b60e0c2ef226cc3fa67a',1,'math::device_matrix::reference()'],['../classmulti__array.html#af3159235e2ab1ca859164571dbce431d',1,'multi_array::reference()']]]
+  ['reference',['reference',['../classdevice__matrix.html#a5a98640d9a24db43de684c696f17bc75',1,'device_matrix::reference()'],['../classdevice__matrix__view.html#ae493f1216f0e818785298d9df3036456',1,'device_matrix_view::reference()'],['../classmulti__array.html#af3159235e2ab1ca859164571dbce431d',1,'multi_array::reference()']]]
 ];

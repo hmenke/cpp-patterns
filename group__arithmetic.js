@@ -1,7 +1,7 @@
 var group__arithmetic =
 [
-    [ "operator*", "group__arithmetic.html#ga6fa157cb5b84364e4e4354495c893d3a", null ],
-    [ "operator+", "group__arithmetic.html#gae1861aaa90a32796aa492f763f41f728", null ],
-    [ "operator-", "group__arithmetic.html#gaa0dbd582a8094e18f7d5b3723d0c2c7b", null ],
-    [ "operator-", "group__arithmetic.html#ga94b16f86f1985b024b32db11b354ea50", null ]
+    [ "operator*", "group__arithmetic.html#ga87584ea23adfe81ea8c429bf299414fe", null ],
+    [ "operator+", "group__arithmetic.html#ga5e52b605b51c19856a0b707ef49786e1", null ],
+    [ "operator-", "group__arithmetic.html#gac717c306f3c092640e6672652c738c56", null ],
+    [ "operator-", "group__arithmetic.html#gac309b87d766ea1d73636a66594a2453b", null ]
 ];

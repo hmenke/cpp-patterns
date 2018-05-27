@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('device__matrix_8cuh.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">device_matrix.cuh File Reference</div>  </div>
@@ -129,22 +129,42 @@ $(document).ready(function(){initNavTree('device__matrix_8cuh.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmath_1_1device__matrix.html">math::device_matrix&lt; T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix.html">device_matrix&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html">device_matrix_view&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespacemath"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemath.html">math</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a3b77ee66ef4e22554c1a577ae04c14e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device__matrix_8cuh.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a></td></tr>
+<tr class="separator:a3b77ee66ef4e22554c1a577ae04c14e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a14dc3b6ca7bb3658de26ed0ad341c3bc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a14dc3b6ca7bb3658de26ed0ad341c3bc"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="device__matrix_8cuh.html#a14dc3b6ca7bb3658de26ed0ad341c3bc">operator&lt;&lt;</a> (std::ostream &amp;os, <a class="el" href="classmath_1_1device__matrix.html">math::device_matrix</a>&lt; T &gt; const &amp;m)</td></tr>
-<tr class="separator:a14dc3b6ca7bb3658de26ed0ad341c3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c88a231d2a4c90b721dd65378fe1488"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> thrust::tuple<br class="typebreak"/>
+&lt; size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="device__matrix_8cuh.html#a2c88a231d2a4c90b721dd65378fe1488">unravel_index</a> (size_t index, size_t lda)</td></tr>
+<tr class="separator:a2c88a231d2a4c90b721dd65378fe1488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ee37cd15b4a3496c7d37fc1cf7720ce"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7ee37cd15b4a3496c7d37fc1cf7720ce"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="device__matrix_8cuh.html#a7ee37cd15b4a3496c7d37fc1cf7720ce">operator&lt;&lt;</a> (std::ostream &amp;os, <a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T &gt; const &amp;m)</td></tr>
+<tr class="separator:a7ee37cd15b4a3496c7d37fc1cf7720ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="a3b77ee66ef4e22554c1a577ae04c14e9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEVICE_FUNC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00018">18</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a14dc3b6ca7bb3658de26ed0ad341c3bc"></a>
+<a class="anchor" id="a7ee37cd15b4a3496c7d37fc1cf7720ce"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -159,7 +179,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classmath_1_1device__matrix.html">math::device_matrix</a>&lt; T &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T &gt; const &amp;&#160;</td>
           <td class="paramname"><em>m</em>&#160;</td>
         </tr>
         <tr>
@@ -170,7 +190,45 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00280">280</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00326">326</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2c88a231d2a4c90b721dd65378fe1488"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> thrust::tuple&lt;size_t, size_t&gt; unravel_index </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>lda</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00023">23</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+
+<p>Referenced by <a class="el" href="test_8cu_source.html#l00007">count_elements::operator()()</a>.</p>
 
 </div>
 </div>
