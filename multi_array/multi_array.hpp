@@ -204,7 +204,7 @@ public:
             meta::all<std::is_convertible<Idx, size_type>::value...>::value,
             "type mismatch");
         return
-#if !defined(NDEBUG) || defined(__CUDACC__)
+#if !defined(NDEBUG) && !defined(__CUDACC__)
             meta::check_bounds<sizeof...(idx)-1, N...>{}(idx...),
 #endif
             m_data[meta::linearized_index<sizeof...(idx)-1, N...>{}(idx...)];
@@ -222,7 +222,7 @@ public:
             meta::all<std::is_convertible<Idx, size_type>::value...>::value,
             "type mismatch");
         return
-#if !defined(NDEBUG) || defined(__CUDACC__)
+#if !defined(NDEBUG) && !defined(__CUDACC__)
             meta::check_bounds<sizeof...(idx) - 1, N...>{}(idx...),
 #endif
             m_data[meta::linearized_index<sizeof...(idx) - 1, N...>{}(idx...)];
@@ -242,6 +242,17 @@ public:
         return size_product<N...>::value;
     }
 };
+
+template <typename T, std::size_t M, std::size_t N>
+DEVICE_FUNC multi_array<T,M,N> outer(multi_array<T,M> const & a, multi_array<T,N> const & b) {
+    multi_array<T,M,N> c;
+    for (std::size_t i = 0; i < M; ++i) {
+        for (std::size_t j = 0; j < N; ++j) {
+            c(i,j) = a(i) * b(j);
+        }
+    }
+    return c;
+}
 
 #undef CXX14_CONSTEXPR
 #undef DEVICE_FUNC
