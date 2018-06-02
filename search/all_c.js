@@ -8,5 +8,6 @@ var searchData=
   ['operator_2d',['operator-',['../group__arithmetic.html#gac717c306f3c092640e6672652c738c56',1,'device_matrix::operator-(device_matrix const &amp;B) const '],['../group__arithmetic.html#gac309b87d766ea1d73636a66594a2453b',1,'device_matrix::operator-()']]],
   ['operator_3c_3c',['operator&lt;&lt;',['../device__matrix_8cuh.html#a7ee37cd15b4a3496c7d37fc1cf7720ce',1,'device_matrix.cuh']]],
   ['operator_3d_3d',['operator==',['../group__compare.html#ga83b37a0983758cfc161488d8026f6758',1,'device_matrix']]],
-  ['operator_5b_5d',['operator[]',['../structA.html#acd0e588d4e7d3d28268aea4c8372a1ec',1,'A::operator[]()'],['../classVector.html#ad2e78b3cab0b5a52eb56be75a7a728a2',1,'Vector::operator[](size_t i)'],['../classVector.html#a7d42b48754a309b56ae880865d42c74e',1,'Vector::operator[](size_t i) const ']]]
+  ['operator_5b_5d',['operator[]',['../structA.html#acd0e588d4e7d3d28268aea4c8372a1ec',1,'A::operator[]()'],['../classVector.html#ad2e78b3cab0b5a52eb56be75a7a728a2',1,'Vector::operator[](size_t i)'],['../classVector.html#a7d42b48754a309b56ae880865d42c74e',1,'Vector::operator[](size_t i) const ']]],
+  ['outer',['outer',['../multi__array_8hpp.html#a064cc9979986daf58c037bd965492a68',1,'multi_array.hpp']]]
 ];
