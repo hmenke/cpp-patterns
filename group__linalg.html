@@ -111,26 +111,26 @@ $(document).ready(function(){initNavTree('group__linalg.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga5d201c164f73bcb60b469ef0cf4b5c9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdevice__matrix.html">device_matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linalg.html#ga5d201c164f73bcb60b469ef0cf4b5c9d">device_matrix&lt; T &gt;::transpose</a> () const </td></tr>
-<tr class="memdesc:ga5d201c164f73bcb60b469ef0cf4b5c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the transpose.  <a href="#ga5d201c164f73bcb60b469ef0cf4b5c9d">More...</a><br/></td></tr>
-<tr class="separator:ga5d201c164f73bcb60b469ef0cf4b5c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga992c7e877ee42507900552b13691f064"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdevice__matrix.html">device_matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linalg.html#ga992c7e877ee42507900552b13691f064">device_matrix&lt; T &gt;::inverse</a> () const </td></tr>
-<tr class="memdesc:ga992c7e877ee42507900552b13691f064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the inverse.  <a href="#ga992c7e877ee42507900552b13691f064">More...</a><br/></td></tr>
-<tr class="separator:ga992c7e877ee42507900552b13691f064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga730d3cb9b41ecee47a85df3b6080008d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdevice__matrix.html">device_matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linalg.html#ga730d3cb9b41ecee47a85df3b6080008d">device_matrix&lt; T, Policy &gt;::transpose</a> () const </td></tr>
+<tr class="memdesc:ga730d3cb9b41ecee47a85df3b6080008d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the transpose.  <a href="#ga730d3cb9b41ecee47a85df3b6080008d">More...</a><br/></td></tr>
+<tr class="separator:ga730d3cb9b41ecee47a85df3b6080008d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa951af3f2185b14ad6b187ae8a7a520b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdevice__matrix.html">device_matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__linalg.html#gaa951af3f2185b14ad6b187ae8a7a520b">device_matrix&lt; T, Policy &gt;::inverse</a> () const </td></tr>
+<tr class="memdesc:gaa951af3f2185b14ad6b187ae8a7a520b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the inverse.  <a href="#gaa951af3f2185b14ad6b187ae8a7a520b">More...</a><br/></td></tr>
+<tr class="separator:gaa951af3f2185b14ad6b187ae8a7a520b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga992c7e877ee42507900552b13691f064"></a>
+<a class="anchor" id="gaa951af3f2185b14ad6b187ae8a7a520b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy = policy::host&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classdevice__matrix.html">device_matrix</a> <a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T &gt;::inverse </td>
+          <td class="memname"><a class="el" href="classdevice__matrix.html">device_matrix</a> <a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T, Policy &gt;::inverse </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -145,25 +145,25 @@ template&lt;typename T&gt; </div>
 
 <p>Compute the inverse. </p>
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00255">255</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00370">370</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
-<p>References <a class="el" href="device__matrix_8cuh_source.html#l00171">device_matrix&lt; T &gt;::data()</a>, and <a class="el" href="device__matrix_8cuh_source.html#l00273">device_matrix&lt; T &gt;::Identity()</a>.</p>
+<p>References <a class="el" href="device__matrix_8hpp_source.html#l00275">device_matrix&lt; T, Policy &gt;::data()</a>, and <a class="el" href="device__matrix_8hpp_source.html#l00388">device_matrix&lt; T, Policy &gt;::Identity()</a>.</p>
 
-<p>Referenced by <a class="el" href="test_8cu_source.html#l00015">main()</a>.</p>
+<p>Referenced by <a class="el" href="device__matrix_2test_8cpp_source.html#l00013">test_cpu()</a>, and <a class="el" href="test_8cu_source.html#l00013">test_gpu()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ga5d201c164f73bcb60b469ef0cf4b5c9d"></a>
+<a class="anchor" id="ga730d3cb9b41ecee47a85df3b6080008d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy = policy::host&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classdevice__matrix.html">device_matrix</a> <a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T &gt;::transpose </td>
+          <td class="memname"><a class="el" href="classdevice__matrix.html">device_matrix</a> <a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T, Policy &gt;::transpose </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -178,9 +178,9 @@ template&lt;typename T&gt; </div>
 
 <p>Compute the transpose. </p>
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00246">246</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00361">361</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
-<p>References <a class="el" href="device__matrix_8cuh_source.html#l00171">device_matrix&lt; T &gt;::data()</a>.</p>
+<p>References <a class="el" href="device__matrix_8hpp_source.html#l00275">device_matrix&lt; T, Policy &gt;::data()</a>.</p>
 
 </div>
 </div>

@@ -111,34 +111,34 @@ $(document).ready(function(){initNavTree('group__compare.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga83b37a0983758cfc161488d8026f6758"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__compare.html#ga83b37a0983758cfc161488d8026f6758">device_matrix&lt; T &gt;::operator==</a> (<a class="el" href="classdevice__matrix.html">device_matrix</a> const &amp;<a class="el" href="structB.html">B</a>) const </td></tr>
-<tr class="memdesc:ga83b37a0983758cfc161488d8026f6758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare for exact bit-wise equality.  <a href="#ga83b37a0983758cfc161488d8026f6758">More...</a><br/></td></tr>
-<tr class="separator:ga83b37a0983758cfc161488d8026f6758"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad422900c9c367e6b1f41cb3d1ee22317"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__compare.html#gad422900c9c367e6b1f41cb3d1ee22317">device_matrix&lt; T &gt;::almostEqual</a> (<a class="el" href="classdevice__matrix.html">device_matrix</a> const &amp;<a class="el" href="structB.html">B</a>, value_type const epsilon=std::numeric_limits&lt; value_type &gt;::epsilon()) const </td></tr>
-<tr class="separator:gad422900c9c367e6b1f41cb3d1ee22317"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85e3dcdbe4a2e9754ccfd8bd5d2bb765"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__compare.html#ga85e3dcdbe4a2e9754ccfd8bd5d2bb765">device_matrix&lt; T, Policy &gt;::operator==</a> (<a class="el" href="classdevice__matrix.html">device_matrix</a> const &amp;<a class="el" href="structB.html">B</a>) const </td></tr>
+<tr class="memdesc:ga85e3dcdbe4a2e9754ccfd8bd5d2bb765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare for exact bit-wise equality.  <a href="#ga85e3dcdbe4a2e9754ccfd8bd5d2bb765">More...</a><br/></td></tr>
+<tr class="separator:ga85e3dcdbe4a2e9754ccfd8bd5d2bb765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab7c324300bbc414de829d1b3756a71fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__compare.html#gab7c324300bbc414de829d1b3756a71fc">device_matrix&lt; T, Policy &gt;::almostEqual</a> (<a class="el" href="classdevice__matrix.html">device_matrix</a> const &amp;<a class="el" href="structB.html">B</a>, value_type const epsilon=std::numeric_limits&lt; value_type &gt;::epsilon()) const </td></tr>
+<tr class="separator:gab7c324300bbc414de829d1b3756a71fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="gad422900c9c367e6b1f41cb3d1ee22317"></a>
+<a class="anchor" id="gab7c324300bbc414de829d1b3756a71fc"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy = policy::host&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T &gt;::almostEqual </td>
+          <td class="memname">bool <a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T, Policy &gt;::almostEqual </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T, Policy &gt; const &amp;&#160;</td>
           <td class="paramname"><em>B</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classdevice__matrix.html#a18ea3db119f2a2c78e66dee0d5fdc7dc">value_type</a> const&#160;</td>
-          <td class="paramname"><em>epsilon</em> = <code>std::numeric_limits&lt;<a class="el" href="classdevice__matrix.html#a18ea3db119f2a2c78e66dee0d5fdc7dc">value_type</a>&gt;::epsilon()</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__matrix.html#aae9572e1e7abb04c1fc4dad2ba5dbdf3">value_type</a> const&#160;</td>
+          <td class="paramname"><em>epsilon</em> = <code>std::numeric_limits&lt;<a class="el" href="classdevice__matrix.html#aae9572e1e7abb04c1fc4dad2ba5dbdf3">value_type</a>&gt;::epsilon()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -160,27 +160,27 @@ template&lt;typename T&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00232">232</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00347">347</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
-<p>References <a class="el" href="device__matrix_8cuh_source.html#l00171">device_matrix&lt; T &gt;::data()</a>, and <a class="el" href="device__matrix_8cuh_source.html#l00175">device_matrix&lt; T &gt;::size()</a>.</p>
+<p>References <a class="el" href="device__matrix_8hpp_source.html#l00275">device_matrix&lt; T, Policy &gt;::data()</a>, and <a class="el" href="device__matrix_8hpp_source.html#l00279">device_matrix&lt; T, Policy &gt;::size()</a>.</p>
 
-<p>Referenced by <a class="el" href="test_8cu_source.html#l00015">main()</a>.</p>
+<p>Referenced by <a class="el" href="device__matrix_2test_8cpp_source.html#l00013">test_cpu()</a>, and <a class="el" href="test_8cu_source.html#l00013">test_gpu()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ga83b37a0983758cfc161488d8026f6758"></a>
+<a class="anchor" id="ga85e3dcdbe4a2e9754ccfd8bd5d2bb765"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy = policy::host&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T &gt;::operator== </td>
+          <td class="memname">bool <a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T, Policy &gt;::operator== </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T &gt; const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T, Policy &gt; const &amp;&#160;</td>
           <td class="paramname"><em>B</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -194,9 +194,9 @@ template&lt;typename T&gt; </div>
 
 <p>Compare for exact bit-wise equality. </p>
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00224">224</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00339">339</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
-<p>References <a class="el" href="device__matrix_8cuh_source.html#l00171">device_matrix&lt; T &gt;::data()</a>, and <a class="el" href="device__matrix_8cuh_source.html#l00175">device_matrix&lt; T &gt;::size()</a>.</p>
+<p>References <a class="el" href="device__matrix_8hpp_source.html#l00275">device_matrix&lt; T, Policy &gt;::data()</a>, and <a class="el" href="device__matrix_8hpp_source.html#l00279">device_matrix&lt; T, Policy &gt;::size()</a>.</p>
 
 </div>
 </div>

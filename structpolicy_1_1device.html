@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>CPP Patterns: count_elements Struct Reference</title>
+<title>CPP Patterns: policy::device Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('structcount__elements.html','');});
+$(document).ready(function(){initNavTree('structpolicy_1_1device.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -111,28 +111,48 @@ $(document).ready(function(){initNavTree('structcount__elements.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">count_elements Struct Reference</div>  </div>
+<div class="title">policy::device Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a7b48632309dc509cebbd3bed54ec291c"><td class="memItemLeft" align="right" valign="top">__host__ __device__ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcount__elements.html#a7b48632309dc509cebbd3bed54ec291c">operator()</a> (int idx)</td></tr>
-<tr class="separator:a7b48632309dc509cebbd3bed54ec291c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a5c222de287a336680cc164f0405492a6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5c222de287a336680cc164f0405492a6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structpolicy_1_1device.html#a5c222de287a336680cc164f0405492a6">vector</a> = thrust::device_vector&lt; T &gt;</td></tr>
+<tr class="separator:a5c222de287a336680cc164f0405492a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:ae19f57e53a038763f99f97272d897560"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcount__elements.html#ae19f57e53a038763f99f97272d897560">v</a></td></tr>
-<tr class="separator:ae19f57e53a038763f99f97272d897560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:afe59e3618b33c419614374358d75c28e"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpolicy_1_1device.html#afe59e3618b33c419614374358d75c28e">par</a> () -&gt; decltype(thrust::device)</td></tr>
+<tr class="separator:afe59e3618b33c419614374358d75c28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="test_8cu_source.html#l00005">5</a> of file <a class="el" href="test_8cu_source.html">test.cu</a>.</p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a7b48632309dc509cebbd3bed54ec291c"></a>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00029">29</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a5c222de287a336680cc164f0405492a6"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structpolicy_1_1device.html#a5c222de287a336680cc164f0405492a6">policy::device::vector</a> =  thrust::device_vector&lt;T&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00031">31</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="afe59e3618b33c419614374358d75c28e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -140,52 +160,32 @@ Data Fields</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">__host__ __device__ void count_elements::operator() </td>
+          <td class="memname">static auto policy::device::par </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>idx</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; decltype(thrust::device) </td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="test_8cu_source.html#l00007">7</a> of file <a class="el" href="test_8cu_source.html">test.cu</a>.</p>
-
-<p>References <a class="el" href="device__matrix_8cuh_source.html#l00319">device_matrix_view&lt; T &gt;::rows()</a>, <a class="el" href="device__matrix_8cuh_source.html#l00023">unravel_index()</a>, and <a class="el" href="test_8cu_source.html#l00006">v</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="ae19f57e53a038763f99f97272d897560"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt;double&gt; count_elements::v</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="test_8cu_source.html#l00006">6</a> of file <a class="el" href="test_8cu_source.html">test.cu</a>.</p>
-
-<p>Referenced by <a class="el" href="test_8cu_source.html#l00007">operator()()</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00032">32</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/travis/build/hmenke/cpp-patterns/device_matrix/<a class="el" href="test_8cu_source.html">test.cu</a></li>
+<li>/home/travis/build/hmenke/cpp-patterns/device_matrix/<a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="structcount__elements.html">count_elements</a></li>
+    <li class="navelem"><a class="el" href="namespacepolicy.html">policy</a></li><li class="navelem"><a class="el" href="structpolicy_1_1device.html">device</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>

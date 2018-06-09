@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>CPP Patterns: device_matrix_view&lt; T &gt; Class Template Reference</title>
+<title>CPP Patterns: device_matrix_view&lt; T, Policy &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -114,211 +114,231 @@ $(document).ready(function(){initNavTree('classdevice__matrix__view.html','');})
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">device_matrix_view&lt; T &gt; Class Template Reference</div>  </div>
+<div class="title">device_matrix_view&lt; T, Policy &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ab165537b7656ae4e6f81bdc5a5b10db4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ab165537b7656ae4e6f81bdc5a5b10db4">value_type</a> = T</td></tr>
-<tr class="separator:ab165537b7656ae4e6f81bdc5a5b10db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac38e5a53838ede2705e53b6638a60780"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a> = std::size_t</td></tr>
-<tr class="separator:ac38e5a53838ede2705e53b6638a60780"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af495ac37055219341bc43e77b8e46567"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#af495ac37055219341bc43e77b8e46567">difference_type</a> = std::ptrdiff_t</td></tr>
-<tr class="separator:af495ac37055219341bc43e77b8e46567"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae493f1216f0e818785298d9df3036456"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ae493f1216f0e818785298d9df3036456">reference</a> = <a class="el" href="classdevice__matrix__view.html#ab165537b7656ae4e6f81bdc5a5b10db4">value_type</a> &amp;</td></tr>
-<tr class="separator:ae493f1216f0e818785298d9df3036456"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d5a40b28226cf93760f61c4177cb2a7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a5d5a40b28226cf93760f61c4177cb2a7">const_reference</a> = <a class="el" href="classdevice__matrix__view.html#ab165537b7656ae4e6f81bdc5a5b10db4">value_type</a> const &amp;</td></tr>
-<tr class="separator:a5d5a40b28226cf93760f61c4177cb2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab732ddc381ecac298fb331173f3f4b38"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ab732ddc381ecac298fb331173f3f4b38">pointer</a> = T *</td></tr>
-<tr class="separator:ab732ddc381ecac298fb331173f3f4b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f2080051ca40b83888276074f664b44"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a6f2080051ca40b83888276074f664b44">const_pointer</a> = T const *</td></tr>
-<tr class="separator:a6f2080051ca40b83888276074f664b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8ac05d35dfbf4ef4f4fef54f8f76f55"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ac8ac05d35dfbf4ef4f4fef54f8f76f55">iterator</a> = <a class="el" href="classdevice__matrix__view.html#ab732ddc381ecac298fb331173f3f4b38">pointer</a></td></tr>
-<tr class="separator:ac8ac05d35dfbf4ef4f4fef54f8f76f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43639c12538e45853f37fdf8949bf89b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a43639c12538e45853f37fdf8949bf89b">storage_type</a> = typename Policy::template vector&lt; T &gt;</td></tr>
+<tr class="separator:a43639c12538e45853f37fdf8949bf89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4194c765f1961eb59f2cbc379aa20ab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ad4194c765f1961eb59f2cbc379aa20ab">value_type</a> = T</td></tr>
+<tr class="separator:ad4194c765f1961eb59f2cbc379aa20ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab305383ab5aa505952981bdba282a522"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a> = std::size_t</td></tr>
+<tr class="separator:ab305383ab5aa505952981bdba282a522"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1606108931fb7d750d60fa591930df21"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a1606108931fb7d750d60fa591930df21">difference_type</a> = std::ptrdiff_t</td></tr>
+<tr class="separator:a1606108931fb7d750d60fa591930df21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac89a1b43ac823eecd10ac728bf81ddea"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ac89a1b43ac823eecd10ac728bf81ddea">reference</a> = <a class="el" href="classdevice__matrix__view.html#ad4194c765f1961eb59f2cbc379aa20ab">value_type</a> &amp;</td></tr>
+<tr class="separator:ac89a1b43ac823eecd10ac728bf81ddea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59ae0e796073dd46b603c30378deeec9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a59ae0e796073dd46b603c30378deeec9">const_reference</a> = <a class="el" href="classdevice__matrix__view.html#ad4194c765f1961eb59f2cbc379aa20ab">value_type</a> const &amp;</td></tr>
+<tr class="separator:a59ae0e796073dd46b603c30378deeec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7284a9bdb1432ea22279bf56a4b8dbd5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a7284a9bdb1432ea22279bf56a4b8dbd5">pointer</a> = T *</td></tr>
+<tr class="separator:a7284a9bdb1432ea22279bf56a4b8dbd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac23c371d7df19259fc8d01bd8dbc413e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ac23c371d7df19259fc8d01bd8dbc413e">const_pointer</a> = T const *</td></tr>
+<tr class="separator:ac23c371d7df19259fc8d01bd8dbc413e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba90fb0c173264889c45239be584799c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#aba90fb0c173264889c45239be584799c">iterator</a> = <a class="el" href="classdevice__matrix__view.html#a7284a9bdb1432ea22279bf56a4b8dbd5">pointer</a></td></tr>
+<tr class="separator:aba90fb0c173264889c45239be584799c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0cc051a2586df1b06ea5666057168c12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a0cc051a2586df1b06ea5666057168c12">device_matrix_view</a> (<a class="el" href="classdevice__matrix__view.html#ab732ddc381ecac298fb331173f3f4b38">pointer</a> <a class="el" href="classdevice__matrix__view.html#ad19a101866728b2429ada6a967808a77">data</a>, <a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a> <a class="el" href="classdevice__matrix__view.html#a789c0f598dadb8d5e1c3fdbf7d660e6c">rows</a>, <a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a> <a class="el" href="classdevice__matrix__view.html#a3e7de1b04a18824d7e03791d0d54030b">cols</a>)</td></tr>
-<tr class="separator:a0cc051a2586df1b06ea5666057168c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a830bb347810dd69d3194be0cafffe063"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a830bb347810dd69d3194be0cafffe063">device_matrix_view</a> (<a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T &gt; &amp;v)</td></tr>
-<tr class="separator:a830bb347810dd69d3194be0cafffe063"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73a60e689f634a895bc749c4beec01c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ae493f1216f0e818785298d9df3036456">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a73a60e689f634a895bc749c4beec01c0">operator()</a> (<a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a> row, <a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a> col) noexcept</td></tr>
-<tr class="separator:a73a60e689f634a895bc749c4beec01c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5c14391f480c94201f82134e2838ee3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#a5d5a40b28226cf93760f61c4177cb2a7">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ad5c14391f480c94201f82134e2838ee3">operator()</a> (<a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a> row, <a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a> col) const noexcept</td></tr>
-<tr class="separator:ad5c14391f480c94201f82134e2838ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad19a101866728b2429ada6a967808a77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ab732ddc381ecac298fb331173f3f4b38">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ad19a101866728b2429ada6a967808a77">data</a> () noexcept</td></tr>
-<tr class="separator:ad19a101866728b2429ada6a967808a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0e7a043c8ff0a3fcbb82e46fdcfc53b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#a6f2080051ca40b83888276074f664b44">const_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ab0e7a043c8ff0a3fcbb82e46fdcfc53b">data</a> () const noexcept</td></tr>
-<tr class="separator:ab0e7a043c8ff0a3fcbb82e46fdcfc53b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a789c0f598dadb8d5e1c3fdbf7d660e6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a789c0f598dadb8d5e1c3fdbf7d660e6c">rows</a> () const noexcept</td></tr>
-<tr class="separator:a789c0f598dadb8d5e1c3fdbf7d660e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e7de1b04a18824d7e03791d0d54030b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a3e7de1b04a18824d7e03791d0d54030b">cols</a> () const noexcept</td></tr>
-<tr class="separator:a3e7de1b04a18824d7e03791d0d54030b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a262aedf65b23cccbf2fa7cde7acd6446"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a262aedf65b23cccbf2fa7cde7acd6446">size</a> () const noexcept</td></tr>
-<tr class="separator:a262aedf65b23cccbf2fa7cde7acd6446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc891ae7b70bc14da5f600180f5a9739"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#acc891ae7b70bc14da5f600180f5a9739">device_matrix_view</a> (<a class="el" href="classdevice__matrix__view.html#a7284a9bdb1432ea22279bf56a4b8dbd5">pointer</a> <a class="el" href="classdevice__matrix__view.html#ad9398cb316cc040c3b349f86487c2409">data</a>, <a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a> <a class="el" href="classdevice__matrix__view.html#a8a1c870339d5cf29f844f0b12d2d21bd">rows</a>, <a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a> <a class="el" href="classdevice__matrix__view.html#af92e321bd1d7a13b143116fac0d7532f">cols</a>)</td></tr>
+<tr class="separator:acc891ae7b70bc14da5f600180f5a9739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac655901e24544410898733ffc51705a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ac655901e24544410898733ffc51705a7">device_matrix_view</a> (<a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T, Policy &gt; &amp;v)</td></tr>
+<tr class="separator:ac655901e24544410898733ffc51705a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb4aa42151cec7c9081323170478cdd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ac89a1b43ac823eecd10ac728bf81ddea">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#adb4aa42151cec7c9081323170478cdd9">operator()</a> (<a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a> row, <a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a> col) noexcept</td></tr>
+<tr class="separator:adb4aa42151cec7c9081323170478cdd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aba28562195006e7bf6e8f36d2f8ac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#a59ae0e796073dd46b603c30378deeec9">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a6aba28562195006e7bf6e8f36d2f8ac6">operator()</a> (<a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a> row, <a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a> col) const noexcept</td></tr>
+<tr class="separator:a6aba28562195006e7bf6e8f36d2f8ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9398cb316cc040c3b349f86487c2409"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#a7284a9bdb1432ea22279bf56a4b8dbd5">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ad9398cb316cc040c3b349f86487c2409">data</a> () noexcept</td></tr>
+<tr class="separator:ad9398cb316cc040c3b349f86487c2409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64464dcae4bd0ad1911193ba32570a96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ac23c371d7df19259fc8d01bd8dbc413e">const_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a64464dcae4bd0ad1911193ba32570a96">data</a> () const noexcept</td></tr>
+<tr class="separator:a64464dcae4bd0ad1911193ba32570a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a1c870339d5cf29f844f0b12d2d21bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#a8a1c870339d5cf29f844f0b12d2d21bd">rows</a> () const noexcept</td></tr>
+<tr class="separator:a8a1c870339d5cf29f844f0b12d2d21bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af92e321bd1d7a13b143116fac0d7532f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#af92e321bd1d7a13b143116fac0d7532f">cols</a> () const noexcept</td></tr>
+<tr class="separator:af92e321bd1d7a13b143116fac0d7532f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad19366c953208751ba7f893a3e26bf7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdevice__matrix__view.html#ad19366c953208751ba7f893a3e26bf7a">size</a> () const noexcept</td></tr>
+<tr class="separator:ad19366c953208751ba7f893a3e26bf7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename T&gt;<br/>
-class device_matrix_view&lt; T &gt;</h3>
+<div class="textblock"><h3>template&lt;typename T, typename Policy&gt;<br/>
+class device_matrix_view&lt; T, Policy &gt;</h3>
 
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00285">285</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00399">399</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a6f2080051ca40b83888276074f664b44"></a>
+<a class="anchor" id="ac23c371d7df19259fc8d01bd8dbc413e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::<a class="el" href="classdevice__matrix__view.html#a6f2080051ca40b83888276074f664b44">const_pointer</a> =  T const *</td>
+          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::<a class="el" href="classdevice__matrix__view.html#ac23c371d7df19259fc8d01bd8dbc413e">const_pointer</a> =  T const *</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00293">293</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00408">408</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a5d5a40b28226cf93760f61c4177cb2a7"></a>
+<a class="anchor" id="a59ae0e796073dd46b603c30378deeec9"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::<a class="el" href="classdevice__matrix__view.html#a5d5a40b28226cf93760f61c4177cb2a7">const_reference</a> =  <a class="el" href="classdevice__matrix__view.html#ab165537b7656ae4e6f81bdc5a5b10db4">value_type</a> const &amp;</td>
+          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::<a class="el" href="classdevice__matrix__view.html#a59ae0e796073dd46b603c30378deeec9">const_reference</a> =  <a class="el" href="classdevice__matrix__view.html#ad4194c765f1961eb59f2cbc379aa20ab">value_type</a> const &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00291">291</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00406">406</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="af495ac37055219341bc43e77b8e46567"></a>
+<a class="anchor" id="a1606108931fb7d750d60fa591930df21"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::<a class="el" href="classdevice__matrix__view.html#af495ac37055219341bc43e77b8e46567">difference_type</a> =  std::ptrdiff_t</td>
+          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::<a class="el" href="classdevice__matrix__view.html#a1606108931fb7d750d60fa591930df21">difference_type</a> =  std::ptrdiff_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00289">289</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00404">404</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac8ac05d35dfbf4ef4f4fef54f8f76f55"></a>
+<a class="anchor" id="aba90fb0c173264889c45239be584799c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::<a class="el" href="classdevice__matrix__view.html#ac8ac05d35dfbf4ef4f4fef54f8f76f55">iterator</a> =  <a class="el" href="classdevice__matrix__view.html#ab732ddc381ecac298fb331173f3f4b38">pointer</a></td>
+          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::<a class="el" href="classdevice__matrix__view.html#aba90fb0c173264889c45239be584799c">iterator</a> =  <a class="el" href="classdevice__matrix__view.html#a7284a9bdb1432ea22279bf56a4b8dbd5">pointer</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00294">294</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00409">409</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab732ddc381ecac298fb331173f3f4b38"></a>
+<a class="anchor" id="a7284a9bdb1432ea22279bf56a4b8dbd5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::<a class="el" href="classdevice__matrix__view.html#ab732ddc381ecac298fb331173f3f4b38">pointer</a> =  T*</td>
+          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::<a class="el" href="classdevice__matrix__view.html#a7284a9bdb1432ea22279bf56a4b8dbd5">pointer</a> =  T *</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00292">292</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00407">407</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae493f1216f0e818785298d9df3036456"></a>
+<a class="anchor" id="ac89a1b43ac823eecd10ac728bf81ddea"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::<a class="el" href="classdevice__matrix__view.html#ae493f1216f0e818785298d9df3036456">reference</a> =  <a class="el" href="classdevice__matrix__view.html#ab165537b7656ae4e6f81bdc5a5b10db4">value_type</a> &amp;</td>
+          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::<a class="el" href="classdevice__matrix__view.html#ac89a1b43ac823eecd10ac728bf81ddea">reference</a> =  <a class="el" href="classdevice__matrix__view.html#ad4194c765f1961eb59f2cbc379aa20ab">value_type</a> &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00290">290</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00405">405</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac38e5a53838ede2705e53b6638a60780"></a>
+<a class="anchor" id="ab305383ab5aa505952981bdba282a522"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::<a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a> =  std::size_t</td>
+          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::<a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a> =  std::size_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00288">288</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00403">403</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab165537b7656ae4e6f81bdc5a5b10db4"></a>
+<a class="anchor" id="a43639c12538e45853f37fdf8949bf89b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::<a class="el" href="classdevice__matrix__view.html#ab165537b7656ae4e6f81bdc5a5b10db4">value_type</a> =  T</td>
+          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::<a class="el" href="classdevice__matrix__view.html#a43639c12538e45853f37fdf8949bf89b">storage_type</a> =  typename Policy::template vector&lt;T&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00287">287</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00401">401</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4194c765f1961eb59f2cbc379aa20ab"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, typename Policy&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::<a class="el" href="classdevice__matrix__view.html#ad4194c765f1961eb59f2cbc379aa20ab">value_type</a> =  T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00402">402</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a0cc051a2586df1b06ea5666057168c12"></a>
+<a class="anchor" id="acc891ae7b70bc14da5f600180f5a9739"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::<a class="el" href="classdevice__matrix__view.html">device_matrix_view</a> </td>
+          <td class="memname"><a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::<a class="el" href="classdevice__matrix__view.html">device_matrix_view</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#ab732ddc381ecac298fb331173f3f4b38">pointer</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#a7284a9bdb1432ea22279bf56a4b8dbd5">pointer</a>&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a>&#160;</td>
           <td class="paramname"><em>rows</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a>&#160;</td>
           <td class="paramname"><em>cols</em>&#160;</td>
         </tr>
         <tr>
@@ -329,55 +349,55 @@ template&lt;typename T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00303">303</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00418">418</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a830bb347810dd69d3194be0cafffe063"></a>
+<a class="anchor" id="ac655901e24544410898733ffc51705a7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::<a class="el" href="classdevice__matrix__view.html">device_matrix_view</a> </td>
+          <td class="memname"><a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::<a class="el" href="classdevice__matrix__view.html">device_matrix_view</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__matrix.html">device_matrix</a>&lt; T, Policy &gt; &amp;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00306">306</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00421">421</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a3e7de1b04a18824d7e03791d0d54030b"></a>
+<a class="anchor" id="af92e321bd1d7a13b143116fac0d7532f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::cols </td>
+          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::cols </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -390,21 +410,21 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00320">320</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00437">437</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad19a101866728b2429ada6a967808a77"></a>
+<a class="anchor" id="ad9398cb316cc040c3b349f86487c2409"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ab732ddc381ecac298fb331173f3f4b38">pointer</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::data </td>
+          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#a7284a9bdb1432ea22279bf56a4b8dbd5">pointer</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::data </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -417,21 +437,21 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00317">317</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00434">434</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ab0e7a043c8ff0a3fcbb82e46fdcfc53b"></a>
+<a class="anchor" id="a64464dcae4bd0ad1911193ba32570a96"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#a6f2080051ca40b83888276074f664b44">const_pointer</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::data </td>
+          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ac23c371d7df19259fc8d01bd8dbc413e">const_pointer</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::data </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -444,29 +464,29 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00318">318</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00435">435</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a73a60e689f634a895bc749c4beec01c0"></a>
+<a class="anchor" id="adb4aa42151cec7c9081323170478cdd9"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ae493f1216f0e818785298d9df3036456">reference</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::operator() </td>
+          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ac89a1b43ac823eecd10ac728bf81ddea">reference</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a>&#160;</td>
           <td class="paramname"><em>row</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a>&#160;</td>
           <td class="paramname"><em>col</em>&#160;</td>
         </tr>
         <tr>
@@ -482,29 +502,29 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00309">309</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00425">425</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad5c14391f480c94201f82134e2838ee3"></a>
+<a class="anchor" id="a6aba28562195006e7bf6e8f36d2f8ac6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#a5d5a40b28226cf93760f61c4177cb2a7">const_reference</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::operator() </td>
+          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#a59ae0e796073dd46b603c30378deeec9">const_reference</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::operator() </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a>&#160;</td>
           <td class="paramname"><em>row</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a>&#160;</td>
           <td class="paramname"><em>col</em>&#160;</td>
         </tr>
         <tr>
@@ -520,21 +540,21 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00313">313</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00429">429</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a789c0f598dadb8d5e1c3fdbf7d660e6c"></a>
+<a class="anchor" id="a8a1c870339d5cf29f844f0b12d2d21bd"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::rows </td>
+          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::rows </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -547,23 +567,23 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00319">319</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00436">436</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="test_8cu_source.html#l00007">count_elements::operator()()</a>.</p>
+<p>Referenced by <a class="el" href="device__matrix_2test_8cpp_source.html#l00006">cpu_count_elements::operator()()</a>, and <a class="el" href="test_8cu_source.html#l00006">gpu_count_elements::operator()()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a262aedf65b23cccbf2fa7cde7acd6446"></a>
+<a class="anchor" id="ad19366c953208751ba7f893a3e26bf7a"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
+template&lt;typename T, typename Policy&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ac38e5a53838ede2705e53b6638a60780">size_type</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T &gt;::size </td>
+          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classdevice__matrix__view.html#ab305383ab5aa505952981bdba282a522">size_type</a> <a class="el" href="classdevice__matrix__view.html">device_matrix_view</a>&lt; T, Policy &gt;::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -576,12 +596,12 @@ template&lt;typename T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="device__matrix_8cuh_source.html#l00321">321</a> of file <a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a>.</p>
+<p>Definition at line <a class="el" href="device__matrix_8hpp_source.html#l00438">438</a> of file <a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/hmenke/cpp-patterns/device_matrix/<a class="el" href="device__matrix_8cuh_source.html">device_matrix.cuh</a></li>
+<li>/home/travis/build/hmenke/cpp-patterns/device_matrix/<a class="el" href="device__matrix_8hpp_source.html">device_matrix.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

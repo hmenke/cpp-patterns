@@ -1,5 +1,5 @@
 var group__linalg =
 [
-    [ "inverse", "group__linalg.html#ga992c7e877ee42507900552b13691f064", null ],
-    [ "transpose", "group__linalg.html#ga5d201c164f73bcb60b469ef0cf4b5c9d", null ]
+    [ "inverse", "group__linalg.html#gaa951af3f2185b14ad6b187ae8a7a520b", null ],
+    [ "transpose", "group__linalg.html#ga730d3cb9b41ecee47a85df3b6080008d", null ]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vector',['Vector',['../classVector.html',1,'']]],
-  ['visitor',['Visitor',['../structVisitor.html',1,'']]]
+  ['unsigned_5fconstant',['unsigned_constant',['../classunsigned__constant.html',1,'']]]
 ];
