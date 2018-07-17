@@ -12,11 +12,8 @@ Interface.o: Interface.cpp
 CoreFunctions.o: CoreFunctions.cpp CoreFunctions.hpp PythonCallback.hpp
 	$(CXX) $(CXXFLAGS) -I/usr/include/python2.7 -c CoreFunctions.cpp
 
-PythonCallback.o: PythonCallback.cpp PythonCallback.hpp
-	$(CXX) $(CXXFLAGS) -I/usr/include/python2.7 -c PythonCallback.cpp
-
-Interface.so: Interface.o CoreFunctions.o PythonCallback.o
-	$(CXX) $(CXXFLAGS) -shared -o Interface.so CoreFunctions.o Interface.o PythonCallback.o
+Interface.so: Interface.o CoreFunctions.o
+	$(CXX) $(CXXFLAGS) -shared -o Interface.so CoreFunctions.o Interface.o
 
 clean:
-	rm Interface.cpp Interface.o CoreFunctions.o Interface.so PythonCallback.o
+	rm Interface.cpp Interface.o CoreFunctions.o Interface.so

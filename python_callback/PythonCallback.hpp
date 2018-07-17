@@ -9,7 +9,10 @@ namespace conversions {
 
 // Convert C++ type to Python
 
-PyObject* arg_to_python(double x);
+inline PyObject* arg_to_python(double x)
+{
+  return PyFloat_FromDouble(x);
+}
 
 // Convert Python type to C++
 
@@ -36,49 +39,15 @@ struct return_from_python<double>
 
 namespace internal {
 
-// Concatenate characters to string
+template <std::size_t N, char C, char... Cs>
+struct signature : signature<N - 1, C, C, Cs...> {};
 
-template < char... Args >
-struct do_make_signature_indeed
-{
-  static constexpr const char str[] = { '(', Args..., ')', '\0' };
+template <char C, char... Cs>
+struct signature<0UL, C, Cs...> {
+    static constexpr char const str[] = {'(', Cs..., ')', '\0'};
 };
-
-template < char... Args >
-constexpr const char do_make_signature_indeed<Args...>::str[];
-
-// Recursively populate variadic argument list
-
-template < size_t N, char Arg, char... Args >
-struct do_make_signature
-{
-  typedef typename do_make_signature<N-1,Arg,Arg,Args...>::type type;
-};
-
-template < char Arg, char... Args >
-struct do_make_signature<0,Arg,Args...>
-{
-  typedef do_make_signature_indeed<Arg,Args...> type;
-};
-
-// Interface: Call recursion
-
-template < size_t N, char Arg >
-struct make_signature
-{
-  typedef typename do_make_signature<N-1,Arg>::type type;
-};
-
-template < char Arg >
-struct make_signature<0,Arg>
-{
-  typedef do_make_signature_indeed<> type;
-};
-
-// Alias template for easy access
-
-template < size_t N, char Arg >
-using signature = typename make_signature<N,Arg>::type;
+template <char C, char... Cs>
+constexpr char const signature<0UL, C, Cs...>::str[];
 
 } // namespace internal
 
