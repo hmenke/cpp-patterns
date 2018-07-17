@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>CPP Patterns: internal::do_make_signature&lt; N, Arg, Args &gt; Struct Template Reference</title>
+<title>CPP Patterns: internal::signature&lt; 0UL, C, Cs...&gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('structinternal_1_1do__make__signature.html','');});
+$(document).ready(function(){initNavTree('structinternal_1_1signature_3_010UL_00_01C_00_01Cs_8_8_8_4.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -111,40 +111,47 @@ $(document).ready(function(){initNavTree('structinternal_1_1do__make__signature.
 
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a>  </div>
+<a href="#pub-static-attribs">Static Public Attributes</a>  </div>
   <div class="headertitle">
-<div class="title">internal::do_make_signature&lt; N, Arg, Args &gt; Struct Template Reference</div>  </div>
+<div class="title">internal::signature&lt; 0UL, C, Cs...&gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="PythonCallback_8hpp_source.html">PythonCallback.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a38370811c3e9b739b466e33be5337d2e"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structinternal_1_1do__make__signature.html">do_make_signature</a>&lt; N-1, <br class="typebreak"/>
-Arg, Arg, Args...&gt;::<a class="el" href="structinternal_1_1do__make__signature.html#a38370811c3e9b739b466e33be5337d2e">type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structinternal_1_1do__make__signature.html#a38370811c3e9b739b466e33be5337d2e">type</a></td></tr>
-<tr class="separator:a38370811c3e9b739b466e33be5337d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:af556c22201ad5d8f66c1c022e37fc630"><td class="memItemLeft" align="right" valign="top">static constexpr char const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structinternal_1_1signature_3_010UL_00_01C_00_01Cs_8_8_8_4.html#af556c22201ad5d8f66c1c022e37fc630">str</a> [] = {'(', Cs..., ')', '\0'}</td></tr>
+<tr class="separator:af556c22201ad5d8f66c1c022e37fc630"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;size_t N, char Arg, char... Args&gt;<br/>
-struct internal::do_make_signature&lt; N, Arg, Args &gt;</h3>
+<div class="textblock"><h3>template&lt;char C, char... Cs&gt;<br/>
+struct internal::signature&lt; 0UL, C, Cs...&gt;</h3>
 
 
-<p>Definition at line <a class="el" href="PythonCallback_8hpp_source.html#l00053">53</a> of file <a class="el" href="PythonCallback_8hpp_source.html">PythonCallback.hpp</a>.</p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a38370811c3e9b739b466e33be5337d2e"></a>
+<p>Definition at line <a class="el" href="PythonCallback_8hpp_source.html#l00046">46</a> of file <a class="el" href="PythonCallback_8hpp_source.html">PythonCallback.hpp</a>.</p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="af556c22201ad5d8f66c1c022e37fc630"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;size_t N, char Arg, char... Args&gt; </div>
+template&lt;char C, char... Cs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="structinternal_1_1do__make__signature.html">do_make_signature</a>&lt;N-1,Arg,Arg,Args...&gt;::<a class="el" href="structinternal_1_1do__make__signature.html#a38370811c3e9b739b466e33be5337d2e">type</a> <a class="el" href="structinternal_1_1do__make__signature.html">internal::do_make_signature</a>&lt; N, Arg, Args &gt;::<a class="el" href="structinternal_1_1do__make__signature.html#a38370811c3e9b739b466e33be5337d2e">type</a></td>
+          <td class="memname">constexpr char const <a class="el" href="structinternal_1_1signature.html">internal::signature</a>&lt; 0UL, C, Cs...&gt;::str = {'(', Cs..., ')', '\0'}</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="PythonCallback_8hpp_source.html#l00055">55</a> of file <a class="el" href="PythonCallback_8hpp_source.html">PythonCallback.hpp</a>.</p>
+<p>Definition at line <a class="el" href="PythonCallback_8hpp_source.html#l00047">47</a> of file <a class="el" href="PythonCallback_8hpp_source.html">PythonCallback.hpp</a>.</p>
 
 </div>
 </div>
@@ -156,7 +163,7 @@ template&lt;size_t N, char Arg, char... Args&gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespaceinternal.html">internal</a></li><li class="navelem"><a class="el" href="structinternal_1_1do__make__signature.html">do_make_signature</a></li>
+    <li class="navelem"><a class="el" href="namespaceinternal.html">internal</a></li><li class="navelem"><a class="el" href="structinternal_1_1signature_3_010UL_00_01C_00_01Cs_8_8_8_4.html">signature< 0UL, C, Cs...></a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>

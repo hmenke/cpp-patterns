@@ -6,8 +6,7 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ]
       ] ]
     ] ],
     [ "Data Structures", null, [
@@ -37,7 +36,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "CoreFunctions_8cpp.html",
-"structB.html"
+"structBytes.html#aae9b19fc1935976f246aea79cc107ae9"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
