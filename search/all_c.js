@@ -9,5 +9,5 @@ var searchData=
   ['operator_3c_3c',['operator&lt;&lt;',['../device__matrix_8hpp.html#a2d3df5c1eae91f008c8bda2ebb03d8ab',1,'operator&lt;&lt;(std::ostream &amp;os, thrust::device_vector&lt; T &gt; const &amp;v):&#160;device_matrix.hpp'],['../device__matrix_8hpp.html#a365e10c4ac3d0807c36e590934636ae3',1,'operator&lt;&lt;(std::ostream &amp;os, thrust::host_vector&lt; T &gt; const &amp;v):&#160;device_matrix.hpp'],['../device__matrix_8hpp.html#a814ee5c1067a7ab8ddcec52c73a5bde5',1,'operator&lt;&lt;(std::ostream &amp;os, device_matrix&lt; T, Policy &gt; const &amp;m):&#160;device_matrix.hpp']]],
   ['operator_3d_3d',['operator==',['../group__compare.html#ga85e3dcdbe4a2e9754ccfd8bd5d2bb765',1,'device_matrix']]],
   ['operator_5b_5d',['operator[]',['../structA.html#acd0e588d4e7d3d28268aea4c8372a1ec',1,'A::operator[]()'],['../classVector.html#ad2e78b3cab0b5a52eb56be75a7a728a2',1,'Vector::operator[](size_t i)'],['../classVector.html#a7d42b48754a309b56ae880865d42c74e',1,'Vector::operator[](size_t i) const ']]],
-  ['outer',['outer',['../multi__array_8hpp.html#a064cc9979986daf58c037bd965492a68',1,'multi_array.hpp']]]
+  ['outer',['outer',['../multi__array_8hpp.html#ab90bc77058820b2663da555924524506',1,'multi_array.hpp']]]
 ];

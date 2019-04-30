@@ -116,7 +116,8 @@ $(document).ready(function(){initNavTree('multi__array_8hpp.html','');});
 <div class="title">multi_array.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdexcept&gt;</code><br/>
+<div class="textblock"><code>#include &lt;cmath&gt;</code><br/>
+<code>#include &lt;stdexcept&gt;</code><br/>
 <code>#include &lt;string&gt;</code><br/>
 <code>#include &lt;type_traits&gt;</code><br/>
 </div>
@@ -136,9 +137,13 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a064cc9979986daf58c037bd965492a68"><td class="memTemplParams" colspan="2">template&lt;typename T , std::size_t M, std::size_t N&gt; </td></tr>
-<tr class="memitem:a064cc9979986daf58c037bd965492a68"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classmulti__array.html">multi_array</a>&lt; T, M, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="multi__array_8hpp.html#a064cc9979986daf58c037bd965492a68">outer</a> (<a class="el" href="classmulti__array.html">multi_array</a>&lt; T, M &gt; const &amp;a, <a class="el" href="classmulti__array.html">multi_array</a>&lt; T, N &gt; const &amp;b)</td></tr>
-<tr class="separator:a064cc9979986daf58c037bd965492a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab90bc77058820b2663da555924524506"><td class="memTemplParams" colspan="2">template&lt;typename T , std::size_t M, std::size_t N&gt; </td></tr>
+<tr class="memitem:ab90bc77058820b2663da555924524506"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="multi__array_8hpp.html#a33ae10fb7e62f032f0da82243d00f91a">CXX14_CONSTEXPR</a> <br class="typebreak"/>
+<a class="el" href="classmulti__array.html">multi_array</a>&lt; T, M, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="multi__array_8hpp.html#ab90bc77058820b2663da555924524506">outer</a> (<a class="el" href="classmulti__array.html">multi_array</a>&lt; T, M &gt; const &amp;a, <a class="el" href="classmulti__array.html">multi_array</a>&lt; T, N &gt; const &amp;b)</td></tr>
+<tr class="separator:ab90bc77058820b2663da555924524506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a471d05fff82132fbb789247c0c8a71c7"><td class="memTemplParams" colspan="2">template&lt;typename T , std::size_t N&gt; </td></tr>
+<tr class="memitem:a471d05fff82132fbb789247c0c8a71c7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="multi__array_8hpp.html#a33ae10fb7e62f032f0da82243d00f91a">CXX14_CONSTEXPR</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="multi__array_8hpp.html#a471d05fff82132fbb789247c0c8a71c7">norm</a> (<a class="el" href="classmulti__array.html">multi_array</a>&lt; T, N &gt; const &amp;a)</td></tr>
+<tr class="separator:a471d05fff82132fbb789247c0c8a71c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="a33ae10fb7e62f032f0da82243d00f91a"></a>
@@ -151,7 +156,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="multi__array_8hpp_source.html#l00016">16</a> of file <a class="el" href="multi__array_8hpp_source.html">multi_array.hpp</a>.</p>
+<p>Definition at line <a class="el" href="multi__array_8hpp_source.html#l00017">17</a> of file <a class="el" href="multi__array_8hpp_source.html">multi_array.hpp</a>.</p>
 
 </div>
 </div>
@@ -165,19 +170,41 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="multi__array_8hpp_source.html#l00010">10</a> of file <a class="el" href="multi__array_8hpp_source.html">multi_array.hpp</a>.</p>
+<p>Definition at line <a class="el" href="multi__array_8hpp_source.html#l00011">11</a> of file <a class="el" href="multi__array_8hpp_source.html">multi_array.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a064cc9979986daf58c037bd965492a68"></a>
+<a class="anchor" id="a471d05fff82132fbb789247c0c8a71c7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="multi__array_8hpp.html#a33ae10fb7e62f032f0da82243d00f91a">CXX14_CONSTEXPR</a> T norm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classmulti__array.html">multi_array</a>&lt; T, N &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="multi__array_8hpp_source.html#l00244">244</a> of file <a class="el" href="multi__array_8hpp_source.html">multi_array.hpp</a>.</p>
+
+<p>Referenced by <a class="el" href="example_8cpp_source.html#l00004">main()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab90bc77058820b2663da555924524506"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T , std::size_t M, std::size_t N&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="classmulti__array.html">multi_array</a>&lt;T,M,N&gt; outer </td>
+          <td class="memname"><a class="el" href="multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9">DEVICE_FUNC</a> <a class="el" href="multi__array_8hpp.html#a33ae10fb7e62f032f0da82243d00f91a">CXX14_CONSTEXPR</a> <a class="el" href="classmulti__array.html">multi_array</a>&lt;T,M,N&gt; outer </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classmulti__array.html">multi_array</a>&lt; T, M &gt; const &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -196,7 +223,7 @@ template&lt;typename T , std::size_t M, std::size_t N&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="multi__array_8hpp_source.html#l00231">231</a> of file <a class="el" href="multi__array_8hpp_source.html">multi_array.hpp</a>.</p>
+<p>Definition at line <a class="el" href="multi__array_8hpp_source.html#l00233">233</a> of file <a class="el" href="multi__array_8hpp_source.html">multi_array.hpp</a>.</p>
 
 </div>
 </div>

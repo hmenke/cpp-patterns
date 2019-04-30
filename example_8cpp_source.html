@@ -142,11 +142,17 @@ $(document).ready(function(){initNavTree('example_8cpp_source.html','');});
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    static_assert( c(3, 2, 1) == 1, <span class="stringliteral">&quot;!&quot;</span> );</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    static_assert( c(2, 1, 0) == 2, <span class="stringliteral">&quot;!&quot;</span> );</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
-<div class="ttc" id="classmulti__array_html_a43bb697e36cda2dbc301b04851860c6a"><div class="ttname"><a href="classmulti__array.html#a43bb697e36cda2dbc301b04851860c6a">multi_array::size</a></div><div class="ttdeci">DEVICE_FUNC constexpr size_type size() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="multi__array_8hpp_source.html#l00218">multi_array.hpp:218</a></div></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#if __cplusplus == 201402L</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span>    constexpr <a class="code" href="classmulti__array.html">multi_array&lt;double, 3&gt;</a> <span class="keyword">const</span> d = { 1, 2, 3 };</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    static_assert( <a class="code" href="multi__array_8hpp.html#a471d05fff82132fbb789247c0c8a71c7">norm</a>(d) == std::sqrt(14), <span class="stringliteral">&quot;!&quot;</span> );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor"></span>}</div>
+<div class="ttc" id="multi__array_8hpp_html_a471d05fff82132fbb789247c0c8a71c7"><div class="ttname"><a href="multi__array_8hpp.html#a471d05fff82132fbb789247c0c8a71c7">norm</a></div><div class="ttdeci">DEVICE_FUNC CXX14_CONSTEXPR T norm(multi_array&lt; T, N &gt; const &amp;a)</div><div class="ttdef"><b>Definition:</b> <a href="multi__array_8hpp_source.html#l00244">multi_array.hpp:244</a></div></div>
+<div class="ttc" id="classmulti__array_html_a43bb697e36cda2dbc301b04851860c6a"><div class="ttname"><a href="classmulti__array.html#a43bb697e36cda2dbc301b04851860c6a">multi_array::size</a></div><div class="ttdeci">DEVICE_FUNC constexpr size_type size() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="multi__array_8hpp_source.html#l00220">multi_array.hpp:220</a></div></div>
 <div class="ttc" id="multi__array_8hpp_html"><div class="ttname"><a href="multi__array_8hpp.html">multi_array.hpp</a></div></div>
 <div class="ttc" id="example_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="example_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="example_8cpp_source.html#l00004">example.cpp:4</a></div></div>
-<div class="ttc" id="classmulti__array_html"><div class="ttname"><a href="classmulti__array.html">multi_array</a></div><div class="ttdef"><b>Definition:</b> <a href="multi__array_8hpp_source.html#l00115">multi_array.hpp:115</a></div></div>
+<div class="ttc" id="classmulti__array_html"><div class="ttname"><a href="classmulti__array.html">multi_array</a></div><div class="ttdef"><b>Definition:</b> <a href="multi__array_8hpp_source.html#l00116">multi_array.hpp:116</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
