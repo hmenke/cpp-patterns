@@ -1,19 +1,20 @@
 #pragma once
 
+#include <cmath>
 #include <stdexcept>
 #include <string>
 #include <type_traits>
 
 #ifdef __CUDACC__
-#    define DEVICE_FUNC __host__ __device__
+#define DEVICE_FUNC __host__ __device__
 #else
-#    define DEVICE_FUNC
+#define DEVICE_FUNC
 #endif
 
 #if __cplusplus == 201402L
-#    define CXX14_CONSTEXPR constexpr
+#define CXX14_CONSTEXPR constexpr
 #else
-#    define CXX14_CONSTEXPR
+#define CXX14_CONSTEXPR
 #endif
 
 /// \cond
@@ -135,7 +136,8 @@ public:
 
     /// Constructor for aggregate initializers
     template <typename... U>
-    DEVICE_FUNC constexpr multi_array(U... data) : m_data{value_type(data)...} {}
+    DEVICE_FUNC constexpr multi_array(U... data)
+        : m_data{value_type(data)...} {}
 
     /// fill the container with specified value
     DEVICE_FUNC void fill(value_type const &value) noexcept(
@@ -188,9 +190,9 @@ public:
             "type mismatch");
         return
 #if !defined(NDEBUG) && !defined(__CUDACC__)
-            meta::check_bounds<sizeof...(idx)-1, N...>{}(idx...),
+            meta::check_bounds<sizeof...(idx) - 1, N...>{}(idx...),
 #endif
-            m_data[meta::linearized_index<sizeof...(idx)-1, N...>{}(idx...)];
+            m_data[meta::linearized_index<sizeof...(idx) - 1, N...>{}(idx...)];
     }
 
     /// \overload DEVICE_FUNC CXX14_CONSTEXPR reference operator()(Idx... idx)
@@ -228,14 +230,23 @@ public:
 };
 
 template <typename T, std::size_t M, std::size_t N>
-DEVICE_FUNC multi_array<T,M,N> outer(multi_array<T,M> const & a, multi_array<T,N> const & b) {
+DEVICE_FUNC CXX14_CONSTEXPR multi_array<T,M,N> outer(multi_array<T,M> const & a, multi_array<T,N> const & b) {
     multi_array<T,M,N> c;
     for (std::size_t i = 0; i < M; ++i) {
         for (std::size_t j = 0; j < N; ++j) {
-            c(i,j) = a(i) * b(j);
+            c(i, j) = a(i) * b(j);
         }
     }
     return c;
+}
+
+template <typename T, std::size_t N>
+DEVICE_FUNC CXX14_CONSTEXPR T norm(multi_array<T,N> const & a) {
+    T c { 0 };
+    for (std::size_t i = 0; i < N; ++i) {
+        c += a(i) * a(i);
+    }
+    return std::sqrt(c);
 }
 
 #undef CXX14_CONSTEXPR

@@ -28,4 +28,9 @@ int main() {
 
     static_assert( c(3, 2, 1) == 1, "!" );
     static_assert( c(2, 1, 0) == 2, "!" );
+
+#if __cplusplus == 201402L
+    constexpr multi_array<double, 3> const d = { 1, 2, 3 };
+    static_assert( norm(d) == std::sqrt(14), "!" );
+#endif
 }
