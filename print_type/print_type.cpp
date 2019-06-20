@@ -15,7 +15,10 @@ const char * print_type_impl() {
 }
 
 template <typename T>
-std::string print_type() {
+struct type_tag {};
+
+template <int&... ExplicitArgumentBarrier, typename T>
+std::string print_type(type_tag<T>) {
 #if defined(__clang__)
     size_t prefixlen = sizeof("const char *print_type_impl() [T = ") - 1;
     size_t suffixlen = sizeof("]") - 1;
@@ -32,7 +35,13 @@ std::string print_type() {
     return type.substr(prefixlen, type.size() - prefixlen - suffixlen);
 }
 
+std::string print_type(type_tag<std::string>) {
+    return "std::string";
+}
+
 int main() {
-    int i = 1;
-    std::cout << print_type<decltype(i)>() << '\n';
+    int i;
+    std::cout << print_type(type_tag<decltype(i)>{}) << '\n';
+    std::string s;
+    std::cout << print_type(type_tag<decltype(s)>{}) << '\n';
 }
