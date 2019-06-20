@@ -25,6 +25,7 @@ if(NOT MSVC)
   add_subdirectory(multi_array)
 endif()
 #add_subdirectory(overloaded)
+add_subdirectory(print_type)
 #add_subdirectory(python_callback) # has no CMakeLists.txt
 add_subdirectory(python_zmq_communication)
 #add_subdirectory(swig_pickle)
