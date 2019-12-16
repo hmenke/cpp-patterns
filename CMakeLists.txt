@@ -29,6 +29,7 @@ add_subdirectory(print_type)
 #add_subdirectory(python_callback) # has no CMakeLists.txt
 add_subdirectory(python_zmq_communication)
 #add_subdirectory(swig_pickle)
+add_subdirectory(tee)
 add_subdirectory(unroll)
 
 # Print found packages
