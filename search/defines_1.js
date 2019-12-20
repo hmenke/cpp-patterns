@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cxx14_5fconstexpr',['CXX14_CONSTEXPR',['../multi__array_8hpp.html#a33ae10fb7e62f032f0da82243d00f91a',1,'multi_array.hpp']]]
+  ['device_5ffunc',['DEVICE_FUNC',['../device__matrix_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9',1,'DEVICE_FUNC():&#160;device_matrix.hpp'],['../multi__array_8hpp.html#a3b77ee66ef4e22554c1a577ae04c14e9',1,'DEVICE_FUNC():&#160;multi_array.hpp']]]
 ];

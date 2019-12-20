@@ -1,8 +1,8 @@
 var unroll_8hpp =
 [
     [ "range", "structrange.html", null ],
-    [ "ALWAYS_INLINE", "unroll_8hpp.html#aa1dec568e79152c892dcf63f445cbd7a", null ],
+    [ "FORCE_INLINE", "unroll_8hpp.html#ac032d233a8ebfcd82fd49d0824eefb18", null ],
     [ "ssize_t", "unroll_8hpp.html#ab34bff3c35ad7fc5d840bd218cecb989", null ],
-    [ "unroll", "unroll_8hpp.html#aa5d6593093e835b6413981012fb30010", null ],
-    [ "unroll", "unroll_8hpp.html#a3611514ff1de3054318cb95077ce4170", null ]
+    [ "unroll", "unroll_8hpp.html#a1596dd7090357fe442cf1fec66a8b926", null ],
+    [ "unroll", "unroll_8hpp.html#a6afd9820a4a2d6df138e67c896235588", null ]
 ];

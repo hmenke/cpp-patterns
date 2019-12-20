@@ -15,7 +15,7 @@ var indexSectionsWithContent =
   5: "lpsuv",
   6: "cdimprstuv",
   7: "b",
-  8: "acd",
+  8: "cdf",
   9: "acl"
 };
 
