@@ -8,6 +8,14 @@
 /// Signed version of std::size_t
 using ssize_t = std::make_signed<std::size_t>::type;
 
+#if defined(__clang__) || defined(__GNUC__) || defined(__GNUG__)
+#define FORCE_INLINE __attribute__((always_inline))
+#elif defined(_MSC_VER) && !defined(__INTEL_COMPILER)
+#define FORCE_INLINE __forceinline
+#else
+#define FORCE_INLINE // :(
+#endif
+
 /// Compile-time loop bounds
 template <ssize_t Lower, ssize_t Upper>
 struct range {
@@ -42,15 +50,16 @@ using make_index_range =
                               make_index_range_descending<L, U>>::type;
 
 template <ssize_t... I, typename F, typename... Indices>
-constexpr inline int unroll_impl(F &&f, index_range<I...>, Indices... v) {
+FORCE_INLINE constexpr inline int unroll_impl(F &&f, index_range<I...>,
+                                              Indices... v) {
     using expander = int[];
     return expander{0, ((void)(f(v..., I)), 0)...}[0];
 }
 
 template <ssize_t... I, ssize_t Lower, ssize_t Upper, typename F,
           typename... Indices>
-constexpr inline int unroll_impl(F &&f, range<Lower, Upper>, index_range<I...>,
-                                 Indices... v) {
+FORCE_INLINE constexpr inline int unroll_impl(F &&f, range<Lower, Upper>,
+                                              index_range<I...>, Indices... v) {
     using expander = int[];
     return expander{
         0, ((void)(unroll_impl(std::forward<F>(f),
@@ -61,8 +70,8 @@ constexpr inline int unroll_impl(F &&f, range<Lower, Upper>, index_range<I...>,
 
 template <typename Range0, typename... Range, ssize_t... I, ssize_t Lower,
           ssize_t Upper, typename F, typename... Indices>
-constexpr inline int unroll_impl(F &&f, range<Lower, Upper>, index_range<I...>,
-                                 Indices... v) {
+FORCE_INLINE constexpr inline int unroll_impl(F &&f, range<Lower, Upper>,
+                                              index_range<I...>, Indices... v) {
     using expander = int[];
     return expander{0,
                     ((void)(unroll_impl<Range...>(
@@ -77,7 +86,7 @@ constexpr inline int unroll_impl(F &&f, range<Lower, Upper>, index_range<I...>,
 
 /// Unroll loop at compile-time
 template <typename Range, typename F>
-constexpr inline int unroll(F &&f) {
+FORCE_INLINE constexpr inline int unroll(F &&f) {
     return internal::unroll_impl(
         std::forward<F>(f),
         internal::make_index_range<Range::lower, Range::upper>{});
@@ -85,7 +94,7 @@ constexpr inline int unroll(F &&f) {
 
 /// Unroll loop at compile-time (nested case)
 template <typename Range0, typename Range1, typename... Range, typename F>
-constexpr inline int unroll(F &&f) {
+FORCE_INLINE constexpr inline int unroll(F &&f) {
     return internal::unroll_impl<Range...>(
         std::forward<F>(f), Range1{},
         internal::make_index_range<Range0::lower, Range0::upper>{});
