@@ -110,6 +110,7 @@ $(document).ready(function(){initNavTree('unroll_8hpp.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
@@ -127,6 +128,11 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time loop bounds.  <a href="structrange.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aa1dec568e79152c892dcf63f445cbd7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unroll_8hpp.html#aa1dec568e79152c892dcf63f445cbd7a">ALWAYS_INLINE</a>&#160;&#160;&#160;inline</td></tr>
+<tr class="separator:aa1dec568e79152c892dcf63f445cbd7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ab34bff3c35ad7fc5d840bd218cecb989"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unroll_8hpp.html#ab34bff3c35ad7fc5d840bd218cecb989">ssize_t</a> = std::make_signed&lt; std::size_t &gt;::type</td></tr>
@@ -135,15 +141,30 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af3aecd73d91f6bee9282d2dae078d322"><td class="memTemplParams" colspan="2">template&lt;typename Range , typename F &gt; </td></tr>
-<tr class="memitem:af3aecd73d91f6bee9282d2dae078d322"><td class="memTemplItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="unroll_8hpp.html#af3aecd73d91f6bee9282d2dae078d322">unroll</a> (F &amp;&amp;<a class="el" href="argument-count_2test_8cpp.html#ad7a3458e484d9f5d2442f402418164cf">f</a>)</td></tr>
-<tr class="memdesc:af3aecd73d91f6bee9282d2dae078d322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unroll loop at compile-time.  <a href="#af3aecd73d91f6bee9282d2dae078d322">More...</a><br/></td></tr>
-<tr class="separator:af3aecd73d91f6bee9282d2dae078d322"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f80629bae7f4c99794ff1cd2da8a2b7"><td class="memTemplParams" colspan="2">template&lt;typename Range0 , typename Range1 , typename... Range, typename F &gt; </td></tr>
-<tr class="memitem:a5f80629bae7f4c99794ff1cd2da8a2b7"><td class="memTemplItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="unroll_8hpp.html#a5f80629bae7f4c99794ff1cd2da8a2b7">unroll</a> (F &amp;&amp;<a class="el" href="argument-count_2test_8cpp.html#ad7a3458e484d9f5d2442f402418164cf">f</a>)</td></tr>
-<tr class="memdesc:a5f80629bae7f4c99794ff1cd2da8a2b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unroll loop at compile-time (nested case)  <a href="#a5f80629bae7f4c99794ff1cd2da8a2b7">More...</a><br/></td></tr>
-<tr class="separator:a5f80629bae7f4c99794ff1cd2da8a2b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5d6593093e835b6413981012fb30010"><td class="memTemplParams" colspan="2">template&lt;typename Range , typename F &gt; </td></tr>
+<tr class="memitem:aa5d6593093e835b6413981012fb30010"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="unroll_8hpp.html#aa1dec568e79152c892dcf63f445cbd7a">ALWAYS_INLINE</a> constexpr int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="unroll_8hpp.html#aa5d6593093e835b6413981012fb30010">unroll</a> (F &amp;&amp;<a class="el" href="argument-count_2test_8cpp.html#ad7a3458e484d9f5d2442f402418164cf">f</a>)</td></tr>
+<tr class="memdesc:aa5d6593093e835b6413981012fb30010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unroll loop at compile-time.  <a href="#aa5d6593093e835b6413981012fb30010">More...</a><br/></td></tr>
+<tr class="separator:aa5d6593093e835b6413981012fb30010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3611514ff1de3054318cb95077ce4170"><td class="memTemplParams" colspan="2">template&lt;typename Range0 , typename Range1 , typename... Range, typename F &gt; </td></tr>
+<tr class="memitem:a3611514ff1de3054318cb95077ce4170"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="unroll_8hpp.html#aa1dec568e79152c892dcf63f445cbd7a">ALWAYS_INLINE</a> constexpr int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="unroll_8hpp.html#a3611514ff1de3054318cb95077ce4170">unroll</a> (F &amp;&amp;<a class="el" href="argument-count_2test_8cpp.html#ad7a3458e484d9f5d2442f402418164cf">f</a>)</td></tr>
+<tr class="memdesc:a3611514ff1de3054318cb95077ce4170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unroll loop at compile-time (nested case)  <a href="#a3611514ff1de3054318cb95077ce4170">More...</a><br/></td></tr>
+<tr class="separator:a3611514ff1de3054318cb95077ce4170"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a class="anchor" id="aa1dec568e79152c892dcf63f445cbd7a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ALWAYS_INLINE&#160;&#160;&#160;inline</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="unroll_8hpp_source.html#l00016">16</a> of file <a class="el" href="unroll_8hpp_source.html">unroll.hpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a class="anchor" id="ab34bff3c35ad7fc5d840bd218cecb989"></a>
 <div class="memitem">
@@ -162,33 +183,25 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="af3aecd73d91f6bee9282d2dae078d322"></a>
+<a class="anchor" id="aa5d6593093e835b6413981012fb30010"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Range , typename F &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int unroll </td>
+          <td class="memname"><a class="el" href="unroll_8hpp.html#aa1dec568e79152c892dcf63f445cbd7a">ALWAYS_INLINE</a> constexpr int unroll </td>
           <td>(</td>
           <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Unroll loop at compile-time. </p>
 
-<p>Definition at line <a class="el" href="unroll_8hpp_source.html#l00080">80</a> of file <a class="el" href="unroll_8hpp_source.html">unroll.hpp</a>.</p>
+<p>Definition at line <a class="el" href="unroll_8hpp_source.html#l00089">89</a> of file <a class="el" href="unroll_8hpp_source.html">unroll.hpp</a>.</p>
 
 <p>References <a class="el" href="argument-count_2test_8cpp_source.html#l00024">f()</a>.</p>
 
@@ -196,33 +209,25 @@ template&lt;typename Range , typename F &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a5f80629bae7f4c99794ff1cd2da8a2b7"></a>
+<a class="anchor" id="a3611514ff1de3054318cb95077ce4170"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Range0 , typename Range1 , typename... Range, typename F &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr int unroll </td>
+          <td class="memname"><a class="el" href="unroll_8hpp.html#aa1dec568e79152c892dcf63f445cbd7a">ALWAYS_INLINE</a> constexpr int unroll </td>
           <td>(</td>
           <td class="paramtype">F &amp;&amp;&#160;</td>
           <td class="paramname"><em>f</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Unroll loop at compile-time (nested case) </p>
 
-<p>Definition at line <a class="el" href="unroll_8hpp_source.html#l00088">88</a> of file <a class="el" href="unroll_8hpp_source.html">unroll.hpp</a>.</p>
+<p>Definition at line <a class="el" href="unroll_8hpp_source.html#l00097">97</a> of file <a class="el" href="unroll_8hpp_source.html">unroll.hpp</a>.</p>
 
 <p>References <a class="el" href="argument-count_2test_8cpp_source.html#l00024">f()</a>.</p>
 
