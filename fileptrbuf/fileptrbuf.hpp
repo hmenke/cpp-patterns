@@ -46,7 +46,7 @@ public:
         : m_f{f}, m_mode{mode} {
         setg(buffer.data() + m_putback_size, buffer.data() + m_putback_size,
              buffer.data() + m_putback_size);
-        setp(buffer.begin(), buffer.end());
+        setp(buffer.data(), buffer.data() + buffer.size());
     }
 
     virtual int_type underflow() override {
