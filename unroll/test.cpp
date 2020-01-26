@@ -4,7 +4,7 @@
 int main() {
     int sum = 0;
     unroll<range<-2, 1>, range<0, 2>, range<3, 0>>(
-        [&sum](int i, int j, int k) FORCE_INLINE { sum += i + j + k; });
+        [&sum](int i, int j, int k) { sum += i + j + k; });
     std::cout << sum << '\n';
 
     sum = 0;
