@@ -24,7 +24,7 @@ var hierarchy =
     [ "policy::host", "structpolicy_1_1host.html", null ],
     [ "integer_sequence< T, Is >", "structinteger__sequence.html", null ],
     [ "make_integer_sequence_impl< T, N, Is >", "structmake__integer__sequence__impl.html", null ],
-    [ "make_integer_sequence_impl< T, std::integral_constant< T, 0 >, Is...>", "structmake__integer__sequence__impl_3_01T_00_01std_1_1integral__constant_3_01T_00_010_01_4_00_01Is_8_8_8_4.html", null ],
+    [ "make_integer_sequence_impl< T, std::integral_constant< T, 0 >, Is... >", "structmake__integer__sequence__impl_3_01T_00_01std_1_1integral__constant_3_01T_00_010_01_4_00_01Is_8_8_8_01_4.html", null ],
     [ "make_integer_sequence_t< T, N >", "structmake__integer__sequence__t.html", null ],
     [ "make_integer_sequence_t< T, std::integral_constant< T, 0 > >", "structmake__integer__sequence__t_3_01T_00_01std_1_1integral__constant_3_01T_00_010_01_4_01_4.html", null ],
     [ "make_integer_sequence_t< T, std::integral_constant< T, 1 > >", "structmake__integer__sequence__t_3_01T_00_01std_1_1integral__constant_3_01T_00_011_01_4_01_4.html", null ],
@@ -33,7 +33,7 @@ var hierarchy =
     [ "conversions::return_from_python< T >", "structconversions_1_1return__from__python.html", null ],
     [ "conversions::return_from_python< double >", "structconversions_1_1return__from__python_3_01double_01_4.html", null ],
     [ "internal::signature< N, C, Cs >", "structinternal_1_1signature.html", null ],
-    [ "internal::signature< 0UL, C, Cs...>", "structinternal_1_1signature_3_010UL_00_01C_00_01Cs_8_8_8_4.html", null ],
+    [ "internal::signature< 0UL, C, Cs... >", "structinternal_1_1signature_3_010UL_00_01C_00_01Cs_8_8_8_01_4.html", null ],
     [ "zmq::socket", "classzmq_1_1socket.html", null ],
     [ "Test", "classTest.html", null ],
     [ "true_type", null, [
@@ -43,7 +43,7 @@ var hierarchy =
     [ "unsigned_constant", "classunsigned__constant.html", [
       [ "argument_count< R(*)(Args...)>", "structargument__count_3_01R_07_5_08_07Args_8_8_8_08_4.html", null ],
       [ "argument_count< R(Args...)>", "structargument__count_3_01R_07Args_8_8_8_08_4.html", null ],
-      [ "argument_count< R(C::*)(Args...) const  >", "structargument__count_3_01R_07C_1_1_5_08_07Args_8_8_8_08_01const_01_01_4.html", null ],
+      [ "argument_count< R(C::*)(Args...) const >", "structargument__count_3_01R_07C_1_1_5_08_07Args_8_8_8_08_01const_01_4.html", null ],
       [ "argument_count< R(C::*)(Args...)>", "structargument__count_3_01R_07C_1_1_5_08_07Args_8_8_8_08_4.html", null ]
     ] ],
     [ "Vector< Scalar, n >", "classVector.html", null ],

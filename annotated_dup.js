@@ -1,7 +1,6 @@
-var annotated =
+var annotated_dup =
 [
     [ "conversions", "namespaceconversions.html", "namespaceconversions" ],
-    [ "cuda", "namespacecuda.html", null ],
     [ "internal", "namespaceinternal.html", "namespaceinternal" ],
     [ "policy", "namespacepolicy.html", "namespacepolicy" ],
     [ "zmq", "namespacezmq.html", "namespacezmq" ],
@@ -9,7 +8,7 @@ var annotated =
     [ "argument_count", "structargument__count.html", null ],
     [ "argument_count< R(*)(Args...)>", "structargument__count_3_01R_07_5_08_07Args_8_8_8_08_4.html", null ],
     [ "argument_count< R(Args...)>", "structargument__count_3_01R_07Args_8_8_8_08_4.html", null ],
-    [ "argument_count< R(C::*)(Args...) const  >", "structargument__count_3_01R_07C_1_1_5_08_07Args_8_8_8_08_01const_01_01_4.html", null ],
+    [ "argument_count< R(C::*)(Args...) const >", "structargument__count_3_01R_07C_1_1_5_08_07Args_8_8_8_08_01const_01_4.html", null ],
     [ "argument_count< R(C::*)(Args...)>", "structargument__count_3_01R_07C_1_1_5_08_07Args_8_8_8_08_4.html", null ],
     [ "B", "structB.html", "structB" ],
     [ "Bytes", "structBytes.html", "structBytes" ],
@@ -25,7 +24,7 @@ var annotated =
     [ "is_vector", "structis__vector.html", null ],
     [ "is_vector< Vector< Scalar, n > >", "structis__vector_3_01Vector_3_01Scalar_00_01n_01_4_01_4.html", null ],
     [ "make_integer_sequence_impl", "structmake__integer__sequence__impl.html", "structmake__integer__sequence__impl" ],
-    [ "make_integer_sequence_impl< T, std::integral_constant< T, 0 >, Is...>", "structmake__integer__sequence__impl_3_01T_00_01std_1_1integral__constant_3_01T_00_010_01_4_00_01Is_8_8_8_4.html", "structmake__integer__sequence__impl_3_01T_00_01std_1_1integral__constant_3_01T_00_010_01_4_00_01Is_8_8_8_4" ],
+    [ "make_integer_sequence_impl< T, std::integral_constant< T, 0 >, Is... >", "structmake__integer__sequence__impl_3_01T_00_01std_1_1integral__constant_3_01T_00_010_01_4_00_01Is_8_8_8_01_4.html", "structmake__integer__sequence__impl_3_01T_00_01std_1_1integral__constant_3_01T_00_010_01_4_00_01Is_8_8_8_01_4" ],
     [ "make_integer_sequence_t", "structmake__integer__sequence__t.html", "structmake__integer__sequence__t" ],
     [ "make_integer_sequence_t< T, std::integral_constant< T, 0 > >", "structmake__integer__sequence__t_3_01T_00_01std_1_1integral__constant_3_01T_00_010_01_4_01_4.html", "structmake__integer__sequence__t_3_01T_00_01std_1_1integral__constant_3_01T_00_010_01_4_01_4" ],
     [ "make_integer_sequence_t< T, std::integral_constant< T, 1 > >", "structmake__integer__sequence__t_3_01T_00_01std_1_1integral__constant_3_01T_00_011_01_4_01_4.html", "structmake__integer__sequence__t_3_01T_00_01std_1_1integral__constant_3_01T_00_011_01_4_01_4" ],

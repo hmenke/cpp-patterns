@@ -2,7 +2,7 @@ var argument_count_2test_8cpp =
 [
     [ "argument_count", "structargument__count.html", null ],
     [ "argument_count< R(C::*)(Args...)>", "structargument__count_3_01R_07C_1_1_5_08_07Args_8_8_8_08_4.html", null ],
-    [ "argument_count< R(C::*)(Args...) const  >", "structargument__count_3_01R_07C_1_1_5_08_07Args_8_8_8_08_01const_01_01_4.html", null ],
+    [ "argument_count< R(C::*)(Args...) const >", "structargument__count_3_01R_07C_1_1_5_08_07Args_8_8_8_08_01const_01_4.html", null ],
     [ "argument_count< R(Args...)>", "structargument__count_3_01R_07Args_8_8_8_08_4.html", null ],
     [ "argument_count< R(*)(Args...)>", "structargument__count_3_01R_07_5_08_07Args_8_8_8_08_4.html", null ],
     [ "A", "structA.html", "structA" ],

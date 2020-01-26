@@ -4,7 +4,7 @@ var searchData=
   ['index_5fsequence',['index_sequence',['../integer__sequence_2test_8cpp.html#a1858edbcfe4e79e2dec984d029135b54',1,'test.cpp']]],
   ['integer_5fsequence',['integer_sequence',['../structinteger__sequence.html',1,'']]],
   ['internal',['internal',['../namespaceinternal.html',1,'']]],
-  ['inverse',['inverse',['../group__linalg.html#gaa951af3f2185b14ad6b187ae8a7a520b',1,'device_matrix::inverse()'],['../namespacecuda.html#a3367b960e8a2e3441233ee89cf4f94b5',1,'cuda::inverse()']]],
+  ['inverse',['inverse',['../group__linalg.html#ga3dfbacdecad3a9c93d8eef5c6fd393d2',1,'device_matrix::inverse()'],['../namespacecuda.html#a3367b960e8a2e3441233ee89cf4f94b5',1,'cuda::inverse()']]],
   ['inverse_2ecu',['inverse.cu',['../inverse_8cu.html',1,'']]],
   ['inverse_5finplace',['inverse_inplace',['../namespacecuda.html#a9d070854d1b1b878b5db0e0189f60dd0',1,'cuda']]],
   ['inverse_5finplace_5fkernel',['inverse_inplace_kernel',['../inverse_8cu.html#a19f719e3a6b75da4166ffad8394d2553',1,'inverse.cu']]],
