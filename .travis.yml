@@ -1,4 +1,4 @@
-dist: trusty
+dist: bionic
 sudo: false
 
 language: cpp
@@ -24,7 +24,7 @@ addons:
 matrix:
   include:
   - compiler: clang
-  # compiler: gcc
+  - compiler: gcc
   - if: branch = master
     env: docs=yes
     script: bash doc/publish_documentation.sh

@@ -1,16 +1,18 @@
+os: Visual Studio 2017
 platform: x64
 
 environment:
   MINICONDA_ROOT: C:\Miniconda36-x64
-  GENERATOR: Visual Studio 14 2015 Win64
+  GENERATOR: Visual Studio 15 2017 Win64
   CONFIG: Release
-  BOOST_ROOT: "C:\\Libraries\\boost_1_60_0"
-  BOOST_LIBRARYDIR: "C:\\Libraries\\boost_1_60_0\\lib64-msvc-14.0"
+  BOOST_ROOT: C:\Libraries\boost_1_66_0
+  BOOST_LIBRARYDIR: C:\Libraries\boost_1_66_0\lib64-msvc-14.1
   PATH: "%BOOST_LIBRARYDIR%;%PATH%"
 
 install:
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
   # Install SWIG
-  - ps: choco install -y --no-progress -r swig --version 3.0.9
+  - ps: choco install -y --no-progress --allow-empty-checksums -r swig --version 4.0.1
   - cmd: call %MINICONDA_ROOT%\Scripts\activate.bat
   # Install ZMQ
   - cmd: C:\Tools\vcpkg\vcpkg install zeromq:x64-windows
@@ -24,15 +26,3 @@ build_script:
   - cd build
   - cmake -G "%GENERATOR%" -DCMAKE_BUILD_TYPE="%CONFIG%" -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=TRUE -DCMAKE_TOOLCHAIN_FILE=C:\Tools\vcpkg\scripts\buildsystems\vcpkg.cmake ..
   - cmake --build . --config "%CONFIG%"
-
-after_build:
-  - cmd: md ..\cpp-patterns-install
-  - cmd: copy "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\redist\1033\vcredist_x64.exe" ..\cpp-patterns-install\
-  # TODO: This just dumps the whole build dir.  We should do a more fine grained selection of files.
-  - cmd: xcopy /E . ..\cpp-patterns-install\
-  - cmd: copy C:\Tools\vcpkg\installed\x64-windows\debug\bin\libzmq*.dll ..\cpp-patterns-install\
-  - cmd: 7z a -tzip cpp-patterns-windows-x86_64.zip ..\cpp-patterns-install > nul
-
-artifacts:
-  - path: build\cpp-patterns-windows-x86_64.zip
-    name: installer
