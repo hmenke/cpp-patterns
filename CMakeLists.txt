@@ -19,6 +19,7 @@ add_subdirectory(detection-idiom)
 #add_subdirectory(device_matrix)
 #add_subdirectory(eigen_cuda)
 #add_subdirectory(enable_if) # has no CMakeLists.txt
+add_subdirectory(fileptrbuf)
 add_subdirectory(integer_sequence)
 if(NOT MSVC)
   # MSVC immediately commits suicide when it sees those tempalates
