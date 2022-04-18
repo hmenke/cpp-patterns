@@ -1,7 +1,7 @@
 # C++ Patterns
 
-[![Build status][travis-svg]][travis-link]
-[![AppVeyor build status][appveyor-svg]][appveyor-link]
+[![Linux](https://github.com/hmenke/cpp-patterns/actions/workflows/linux.yml/badge.svg)](https://github.com/hmenke/cpp-patterns/actions/workflows/linux.yml)
+[![Windows](https://github.com/hmenke/cpp-patterns/actions/workflows/windows.yml/badge.svg)](https://github.com/hmenke/cpp-patterns/actions/workflows/windows.yml)
 
 In this repo I collect C++ patterns (more like tricks) which I come
 across.
